@@ -1,6 +1,6 @@
 import absoluteUrl from 'next-absolute-url'
 import styled from 'styled-components';
-import DashTemplate from '../components/DashTemplate'
+import HomePage from '../components/HomePage'
 
 const moment = require('moment');
 
@@ -45,7 +45,7 @@ class Home extends React.Component {
 	};
   render() {
     return (
-      <DashTemplate />
+      <HomePage />
     )
   }
 }

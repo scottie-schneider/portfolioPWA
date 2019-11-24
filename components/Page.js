@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { createGlobalStyle } from 'styled-components'
 // /* ${dom.css()} */ (add this to global styles if it doesn't work)
 
+import PortfolioNav from './PortfolioNav';
 // styled to bump up z index of autocomplete 
 const theme = {  
   mainFont: "'Fira Sans', sans-serif;",
@@ -122,7 +123,7 @@ import WrapperDiv from './WrapperDiv';
 import Meta from './Meta';
 import WebNavbar from './WebNavbar'
 import BottomNav from './BottomNav'
-
+import PorfolioNav from './PortfolioNav'
 
 const lightTheme = {
   blue: '#1d8cf8',
@@ -186,6 +187,7 @@ class Page extends Component {
         <WrapperDiv className="wrapper">
         <GlobalStyle />
           <Meta />
+          <PortfolioNav />
               {this.props.children}                          
         </WrapperDiv>
       </ThemeProvider>

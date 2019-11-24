@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Link from 'next/link';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRabbit as fasFaRabbit } from '@fortawesome/pro-solid-svg-icons'
 import { faMapMarkerAlt as fasMapMarkerAlt } from '@fortawesome/pro-solid-svg-icons'
@@ -12,12 +14,11 @@ import { faRabbit as falFaRabbit } from '@fortawesome/pro-light-svg-icons';
 import { faRabbit as fadFaRabbit } from '@fortawesome/pro-duotone-svg-icons';
 import { fromPromise } from 'apollo-link';
 
-const DashTemplateStyle = styled.body`
+const HomePageStyle = styled.div`
   /* apply a natural box layout model to all elements, but allowing components to change */
   html {
     box-sizing: border-box;
     min-height: 100%;
-
   }
   *, *:before, *:after {
     box-sizing: inherit;
@@ -58,7 +59,6 @@ const DashTemplateStyle = styled.body`
     -moz-box-shadow: 0px 4px 12px -1px rgba(0,0,0,0.6);
     box-shadow: 0px 4px 12px -1px rgba(0,0,0,0.6);
     border-radius: 1rem;
-
   }
 
   h2, h3 {
@@ -72,32 +72,6 @@ const DashTemplateStyle = styled.body`
   }
   p {
     line-height: 2;
-  }
-  .main-navigation {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  @media (min-width: 768px) {
-    .main-navigation {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-  .main-navigation a {
-    color: ${props => props.theme.dark};
-    text-decoration: none;
-    font-size: 1.4rem;
-    margin-bottom: 1.4rem;
-  }
-
-  @media (min-width: 768px) {
-    .main-navigation a {
-      margin-bottom: 0;
-    }
   }
   .hero {
     height: 450px;
@@ -205,15 +179,9 @@ const DashTemplateStyle = styled.body`
   }
 `
 
-export default function DashTemplate() {
+export default function HomePage() {
   return (
-    <DashTemplateStyle>
-      <nav class="main-navigation">
-        <a href="#">Home</a>
-        <a href="#">About Me</a>
-        <a href="#">Clients & Work</a>
-        <a href="#">Contact Me</a>
-      </nav>
+    <HomePageStyle>
       <div class="hero">
         <div class="hero-content">
           <h1>Senior Product Developer and Designer</h1>
@@ -296,6 +264,6 @@ export default function DashTemplate() {
             </form>
           </section>
         </div>
-    </DashTemplateStyle>
+    </HomePageStyle>
   );
 }

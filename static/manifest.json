@@ -1,20 +1,20 @@
 {
-  "name": "Raices",
-  "short_name": "Raices",
+  "name": "Scottie Schneider",
+  "short_name": "Scottie",
   "icons": [
     {
-      "src": "/static/raices192.png",
+      "src": "/static/scottie192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/static/raices512.png",
+      "src": "/static/scottie512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "background_color": "#FFFFFF",
-  "description": "Raices from static...",
+  "description": "Scottie Schneider - Developer, Designer, Product Lead",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#000"

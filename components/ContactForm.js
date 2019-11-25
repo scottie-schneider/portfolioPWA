@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ContactFormStyle = styled.div`
   form {
-    background-color: ${props => props.theme.grey};
+    background-color: ${props => props.theme.white};
     padding: 2rem;
     border-radius: 1rem;
   }
@@ -17,7 +17,8 @@ const ContactFormStyle = styled.div`
       top: .8rem;
       left: 1rem;
       font-size: .9rem;
-      transition: font-size .2s ease, top .2s ease;      
+      transition: font-size .2s ease, top .2s ease;   
+      z-index: 1;   
     }
   }
   input, textarea {
@@ -25,6 +26,7 @@ const ContactFormStyle = styled.div`
     background: transparent;
     font-size: 1rem;
     padding-top: 1.2rem;
+    z-index: 2;
   }
   textarea:focus + label, 
   input:focus +label,

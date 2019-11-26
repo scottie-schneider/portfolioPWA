@@ -3,12 +3,12 @@
   "short_name": "Scottie",
   "icons": [
     {
-      "src": "/static/scottie192.png",
+      "src": "/static/192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/static/scottie512.png",
+      "src": "/static/512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

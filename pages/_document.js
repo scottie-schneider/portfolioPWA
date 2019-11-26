@@ -1,60 +1,60 @@
-// _document is only rendered on the server side and not on the client side
-// Event handlers like onClick can't be added to this file
-
-// ./pages/_document.js
-import Document  from 'next/document'
+import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
+  static getInitialProps({ renderPage }) {
+    const sheet = new ServerStyleSheet();
+    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />));
+    const styleTags = sheet.getStyleElement();
+    return { ...page, styleTags };
+  }
 
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
-        })
-
-      const initialProps = await Document.getInitialProps(ctx)
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      }
-    } finally {
-      sheet.seal()
-    }
+  render() {
+    return (
+      <html>
+        <Head>{this.props.styleTags}</Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    );
   }
 }
+// _document is only rendered on the server side and not on the client side
+// Event handlers like onClick can't be added to this file
 
-// class MyDocument extends Document {
+// I know the below fixes css flicker, but it broke the PWA functionality.
+
+// // ./pages/_document.js
+// import Document  from 'next/document'
+// import { ServerStyleSheet } from 'styled-components';
+
+// export default class MyDocument extends Document {
 //   static async getInitialProps(ctx) {
-//     const sheet = new ServerStyleSheet();
-//     const page = ctx.renderPage(App => props => sheet.collectStyles(<App {...props} />));
-//     const styleTags = sheet.getStyleElement();
-//     const initialProps = await Document.getInitialProps(ctx)
-//     return {...initialProps, ...page, styleTags };
-//   }
+//     const sheet = new ServerStyleSheet()
+//     const originalRenderPage = ctx.renderPage
 
-//   render() {
-//     return (
-//       <html>
-//         <Head>
-//           {this.props.styleTags}           
-//           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWAvPfvYStM_QGVqo36vo3d2g3OOOEziY&libraries=places"></script>          
-//         </Head>
-//         <body className="sidebar-mini">
-//           <Main />
-//           <NextScript />
-//         </body>
-//       </html>
-//     )
+//     try {
+//       ctx.renderPage = () =>
+//         originalRenderPage({
+//           enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+//         })
+
+//       const initialProps = await Document.getInitialProps(ctx)
+//       return {
+//         ...initialProps,
+//         styles: (
+//           <>
+//             {initialProps.styles}
+//             {sheet.getStyleElement()}
+//           </>
+//         ),
+//       }
+//     } finally {
+//       sheet.seal()
+//     }
 //   }
 // }
 
-// export default MyDocument
+

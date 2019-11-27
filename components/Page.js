@@ -4,7 +4,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import { createGlobalStyle } from 'styled-components'
 // /* ${dom.css()} */ (add this to global styles if it doesn't work)
 
-import PortfolioNav from './PortfolioNav';
 // styled to bump up z index of autocomplete 
 const theme = {  
   mainFont: "'Fira Sans', sans-serif;",
@@ -102,21 +101,7 @@ const GlobalStyle = createGlobalStyle`
       background: rgba(0, 0, 0, 0.4);
     }  
   }
-  .bottomNav {
-    display: none !important;
-  }
   
-  @media(max-width: 700px){
-    .bottomNav {
-      display: flex !important;
-    }
-    .topNav {
-      display: none !important;
-    }
-    .wrapper {
-      margin-bottom: 74px !important;
-    }
-  }
 `
 
 import WrapperDiv from './WrapperDiv';
@@ -186,9 +171,8 @@ class Page extends Component {
       <ThemeProvider theme={theme}>        
         <WrapperDiv className="wrapper">
         <GlobalStyle />
-          <Meta />
-          <PortfolioNav />
-              {this.props.children}                          
+          <Meta />          
+            {this.props.children}                          
         </WrapperDiv>
       </ThemeProvider>
     )

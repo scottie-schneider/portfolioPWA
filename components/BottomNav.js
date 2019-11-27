@@ -3,39 +3,49 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const StyledNav = styled.div`
-  position: fixed;
-  display: flex;  
-  flex: 1;
-  bottom: 0;
-  margin: 0;
-  width: 100%;
-  z-index: 3;
-  max-height: 56px;
-  /* max-width: 450px; */
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  ul {
-    padding-top: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
+  @media screen and (max-width:450px) {
+    position: fixed;
+    display: flex;  
     flex: 1;
-    justify-content: space-between;
-  }
-  li {
-    list-style: none;
-    text-align: center;
-    display: block;
-  }
-  li a {
-    text-decoration: none;
-    padding: 0 5px;
-    display: block;
-    color: #000 !important;
-    p {
-      margin-bottom: 0px;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    z-index: 3;
+    max-height: 56px;
+    /* max-width: 450px; */
+    background: #fff;
+    /* box-shadow: 0 10px 30px rgba(0,0,0,0.3); */
+    ul {
+      align-items: center;
+      max-height: 56px;
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      justify-content: space-between;
+    }
+    li {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    li a {
+      text-decoration: none;
+      padding: 0 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #000 !important;
+      flex: 1;
+      svg {
+        padding-top: 5px;
+        flex: 1;
+      }
+      p {
+        margin-top: 0;
+        margin-bottom: 0px;
+      }
     }
   }
 `

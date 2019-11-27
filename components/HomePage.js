@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import PortfolioNav from './PortfolioNav';
+import BottomNav from './BottomNav';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt as fasMapMarkerAlt } from '@fortawesome/pro-solid-svg-icons'
@@ -135,6 +137,7 @@ const HomePageStyle = styled.div`
 export default function HomePage() {
   return (
     <HomePageStyle>
+      <PortfolioNav />
       <div class="hero">
         <div class="hero-content">
           <h1>Senior Product Developer and Designer</h1>

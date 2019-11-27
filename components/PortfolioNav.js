@@ -17,50 +17,99 @@ Router.onRouteChangeError = () => {
 };
 
 const PortfolioNavStyle = styled.div`
-    .main-navigation {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 0;
+  .header {
     display: flex;
-    flex-direction: column;
+  }
+  .simple {
+    display: block;
+    flex: 1;
+  }
+  .site-name {
+    display: flex;
     align-items: center;
   }
-  @media (min-width: 768px) {
-    .main-navigation {
+  .simple ul {
       flex-direction: row;
-      justify-content: space-between;
-    }
   }
-  .main-navigation a {
-    color: ${props => props.theme.dark};
-    text-decoration: none;
-    font-size: 1.4rem;
-    margin-bottom: 1.4rem;
+  .simple ul li {
+      margin-bottom: 0px;
   }
 
-  @media (min-width: 768px) {
-    .main-navigation a {
-      margin-bottom: 0;
+  @media(max-width: 450px) {
+    /* Don't display the logo on small screens */
+    .site-name {
+      display: none;
     }
+    .header {
+      position: fixed;
+      display: flex;  
+      flex: 1;
+      bottom: 0;
+      margin: 0;
+      width: 100%;
+      z-index: 3;
+      max-height: 56px;
+    }
+  }
+  .header .site-name {
+      flex: 0 0 5rem;  
+      background-color: #003f8c; 
+      padding-left: 1rem;
+  }
+  .site-name img {
+    padding-left: 5px;
+  }
+  .mobile {
+      display: block;
+  }
+  /* Nav */
+  nav {
+    background-color: #3F51B5;
+  }
+  nav ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  nav ul li {
+    padding: 1rem;
+  }
+  nav ul li:hover {
+    background-color: #1a2770;
+  }
+  nav ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  /** Menu simple **/
+  .simple ul {
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-between;
+  }
+  .simple ul li{
+    text-align:center;
+    margin-bottom: 20px;
+    flex:1;
   }
 `
 
 const PortfolioNav = () => (
   <PortfolioNavStyle>
-    <nav class="main-navigation">
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        <Link href="/about">
-          <a>About Me</a>
-        </Link>
-        <Link href="/layouts">
-          <a>Layouts</a>
-        </Link>
-        <Link href="/work">
-          <a>Clients and Work</a>
-        </Link>
+    <header class="header">
+      <div class="site-name">                
+          <img src="../static/32x32.png" alt=""/>
+      </div>
+      <nav class="simple">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
       </nav>
+    </header>
   </PortfolioNavStyle>
 );
 

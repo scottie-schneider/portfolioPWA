@@ -90,7 +90,6 @@ const PortfolioNavStyle = styled.div`
   }
   .simple ul li{
     text-align:center;
-    margin-bottom: 20px;
     flex:1;
   }
 `

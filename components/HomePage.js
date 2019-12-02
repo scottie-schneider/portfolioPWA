@@ -142,7 +142,7 @@ export default function HomePage() {
         <div class="hero-content">
           <h1>Senior Product Developer and Designer</h1>
           <p><FontAwesomeIcon icon={fasMapMarkerAlt} />Medellin, Colombia/United States</p>
-          <a class="button" href="#">Contact Me Here</a>
+          {/* <a class="button" href="#">Contact Me Here</a> */}
         </div>
       </div>
       <div class="container">

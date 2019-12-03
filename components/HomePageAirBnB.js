@@ -72,7 +72,7 @@ const HomePageStyle = styled.div`
   }
   .hero {
   height: 100vh;
-  background-image: url(https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575321901/Raices/Medellin/colombia-2722716.jpg);
+  background-image: url(https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575321901/Raices/Medellin/colombia-2722716.jpg);
   background-size: cover;
   background-position: bottom center;
   display: grid;
@@ -412,35 +412,35 @@ export default function HomePageAirBnB() {
           <h2>Neighborhoods</h2>
           <div class="cards-container">
             <div class="card neighborhoods">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575403179/Raices/Poblado/poblado.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575403179/Raices/Poblado/poblado.jpg" alt=""/>
               <div class="info">
                 <p class="title">El Poblado</p>
                 <p class="price">$210,000 USD Average</p>
               </div>
             </div> 
             <div class="card neighborhoods">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575403683/Raices/Envigado/envigado.png" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575403683/Raices/Envigado/envigado.png" alt=""/>
               <div class="info">
                 <p class="title">Envigado</p>
                 <p class="price">$187,000 USD Average</p>
               </div>
             </div> 
             <div class="card neighborhoods">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575403905/Raices/Laureles/laureles_medellin.png" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575403905/Raices/Laureles/laureles_medellin.png" alt=""/>
               <div class="info">
                 <p class="title">Laureles</p>
                 <p class="price">$110,000 USD Average</p>
               </div>
             </div> 
             <div class="card neighborhoods">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575404089/Raices/Patio%20Bonito/patio_bonito.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575404089/Raices/Patio%20Bonito/patio_bonito.jpg" alt=""/>
               <div class="info">
                 <p class="title">Patio Bonito</p>
                 <p class="price">$193,000 USD Average</p>
               </div>
             </div> 
             <div class="card neighborhoods">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575404407/Raices/El%20Centro/centro.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575404407/Raices/El%20Centro/centro.jpg" alt=""/>
               <div class="info">
                 <p class="title">El Centro</p>
                 <p class="price">$84,000 USD Average</p>
@@ -453,7 +453,7 @@ export default function HomePageAirBnB() {
           <h2>Nearby Towns</h2>
           <div class="cards-container">
             <div class="card">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575405400/Raices/San%20Rafael/sanrafael.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575405400/Raices/San%20Rafael/sanrafael.jpg" alt=""/>
               <div class="info">          
                 <p class="title">
                   San Rafael
@@ -462,7 +462,7 @@ export default function HomePageAirBnB() {
               </div>
             </div> 
             <div class="card">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575405590/Raices/Guatape/guatape.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575405590/Raices/Guatape/guatape.jpg" alt=""/>
               <div class="info">
                 <p class="title">
                   Guatape
@@ -471,7 +471,7 @@ export default function HomePageAirBnB() {
               </div>
             </div> 
             <div class="card">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575406654/Raices/Santa%20Fe%20de%20Antoquia/santafedeantoquia.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575406654/Raices/Santa%20Fe%20de%20Antoquia/santafedeantoquia.jpg" alt=""/>
               <div class="info">
                 <p class="title">
                   Santa Fe de Antoquia 
@@ -532,7 +532,7 @@ export default function HomePageAirBnB() {
           <h2>Top rated agents</h2>
           <div class="cards-container agent">
             <div class="card agent">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1570485457/Raices/AgentPhotos/Lori_Diggs.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/Lori_Diggs.jpg" alt=""/>
               <div class="info">
                 <p class="category class">
                   Negotiations
@@ -544,7 +544,7 @@ export default function HomePageAirBnB() {
               </div>
             </div> 
             <div class="card agent">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1570485457/Raices/AgentPhotos/Jim_Johnson.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/Jim_Johnson.jpg" alt=""/>
               <div class="info">
                 <p class="category concert">
                   New Contructions
@@ -556,7 +556,7 @@ export default function HomePageAirBnB() {
               </div>
             </div> 
             <div class="card agent">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1570485457/Raices/AgentPhotos/James_Kim.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/James_Kim.jpg" alt=""/>
               <div class="info">
                 <p class="category class">
                   Contracts
@@ -568,7 +568,7 @@ export default function HomePageAirBnB() {
               </div>
             </div>
             <div class="card agent">
-              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1570485457/Raices/AgentPhotos/Jill_Smith.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/Jill_Smith.jpg" alt=""/>
               <div class="info">
                 <p class="category outdoor-activity">
                   First Time Buyers

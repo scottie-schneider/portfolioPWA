@@ -34,7 +34,7 @@ const HomePageStyle = styled.div`
     background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   }
   body {
-    font-family: var(--mainFont);
+    font-family: 'Fira Sans', sans-serif; 
     width: 100%;
   }
   /** Colors and Categroes **/
@@ -54,7 +54,7 @@ const HomePageStyle = styled.div`
   h1 {
     font-weight: 700;
     font-size: 2rem;
-    color: var(--dark);
+    color:  #484848;
   }
   h2 {
     font-size: 2rem;
@@ -180,8 +180,8 @@ display: grid;
 justify-content: flex-end;
 }
 .submitBtn {
-background-color: var(--primary);
-color: var(--light);
+background-color: rgb(255, 90, 95);
+color: #fff;
 padding: 1rem 2rem;
 border-radius: 5px;
 border:none;

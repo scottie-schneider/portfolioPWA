@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import AirBnBNav from './AirBnBNav';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt as fasMapMarkerAlt } from '@fortawesome/pro-solid-svg-icons'
-import { faPencilRuler as farPencilRuler } from '@fortawesome/pro-regular-svg-icons';
-import { faCoffeeTogo as farCoffeeTogo } from '@fortawesome/pro-regular-svg-icons';
-import { faFrostyHead as farFrostyHead } from '@fortawesome/pro-regular-svg-icons';
-// import { faRabbit as fasFaRabbit } from '@fortawesome/pro-solid-svg-icons'
-// import { faRabbit as farFaRabbit } from '@fortawesome/pro-regular-svg-icons';
-// import { faRabbit as falFaRabbit } from '@fortawesome/pro-light-svg-icons';
-// import { faRabbit as fadFaRabbit } from '@fortawesome/pro-duotone-svg-icons';
-// import { fromPromise } from 'apollo-link';
-import ContactForm from './ContactForm';
+import { faCaretDown as falCaretDown } from '@fortawesome/pro-regular-svg-icons'
+
+//todo create topMenu open/no in state 
+// apply .active state to .logo (done)
+// apply .active state to body  (done)
+// apply .active state to topMenu (done)
+// apply .open to logo i 
+// apply .active to .back
 
 const HomePageStyle = styled.div`
   /* apply a natural box layout model to all elements, but allowing components to change */
@@ -27,8 +24,18 @@ const HomePageStyle = styled.div`
     width: 35px;
     height: 35px;
   }
+  .icons svg {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+  .icons i {
+    font-size: 1rem;
+  }
   body {
-    font-family: ${props => props.theme.fontFamily};
     min-height: 100%;
     background: linear-gradient(to top, #dfe9f3 0%, white 100%);
   }
@@ -87,11 +94,104 @@ const HomePageStyle = styled.div`
     display: grid;
     grid-template-columns: 10% auto 30%;
     width: 100%;
-    padding: 1rem;
+    height: 65px; 
+    padding-left: 1rem;
     align-items: flex-start;
+  }
+  .topMenu {
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  top: -300%;
+  left: 0;
+  background-color: #fff;
+  transition: top .5s ease-in-out;
+  max-height: 100%;
+  z-index: 10;
+  overflow-y: scroll;
+}
+.topMenu.active {
+  top: 0;
+}
+.topMenu nav {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+.topMenu nav ul {
+  display: grid;
+  list-style-type: none;
+  grid-row-gap: 20px;
+}
+.topMenu a {
+  text-decoration: none;
+  color: grey;
+}
+.topMenu nav ul .share {  
+  display: grid;
+  grid-row-gap: 2rem;
+  border-top: 1px solid lightgrey;
+  padding-top: 2rem;
+}
+.topMenu nav ul .international {
+  display: grid;
+  grid-row-gap: 2rem;
+  border-top: 1px solid lightgrey;
+  padding-top: 2rem;
+}
+.topMenu nav ul .help {
+  display: grid;
+  grid-row-gap: 2rem;;
+  border-top: 1px solid lightgrey;
+  padding-top: 2rem;
+}
+.topMenu nav ul .auth {
+  display: grid;
+  grid-row-gap: 2rem;
+  border-top: 1px solid lightgrey;
+  padding-top: 2rem;
+}
+  .logo {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    z-index: 13;  
   }
   .logo h2 {
     color: #fff;
+    padding-left: 1.4rem;
+    padding-right: 1rem;
+  }
+  /* when menu is displayed, apply dark color to h2  */
+  .logo.active h2 {
+    color: black;
+  }
+  .logo svg {
+    color: white;
+    transform: rotate(0deg);
+    transition: transform .3s linear;  
+    vertical-align: middle;
+    text-align: center;
+  }
+  .logo svg.open {    
+    transform: rotate(180deg);
+    transition: transform .3s linear;
+    color: black;
+    text-align: center;
+  }
+  .back.active {
+    top: 0;
+  }
+  .back {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    max-width: 100%;
+    top: -300%;
+    left: 0;
+    background-color: #fff;
+    transition: top .5s ease-in-out;
+    max-height: 100%;
+    z-index: 11;
   }
   .main-nav {
     display: none;
@@ -202,7 +302,7 @@ const HomePageStyle = styled.div`
   .cards-container.agent {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, 180px);
+    grid-template-columns: repeat(auto-fit, 170px);
     justify-content: center;
   }
   @media (min-width: 768px) {
@@ -248,6 +348,9 @@ const HomePageStyle = styled.div`
     width: 100%;
     height: 210px;
     border-radius: 5px;
+  }
+  .card.agent img {
+    height: 180px;
   }
   .card .info {
     padding-top: 1rem;
@@ -384,6 +487,7 @@ const HomePageStyle = styled.div`
 class HomePageAirBnB extends Component {
   state = {
     menu: "closed",
+    topMenu: "closed"
   }
   toggleMenu = () => {
     if(this.state.menu === "closed"){
@@ -392,21 +496,60 @@ class HomePageAirBnB extends Component {
       this.setState({menu: "closed"})
     }
   }
+  toggleTopMenu = () => {
+    
+    if(this.state.topMenu === "closed"){
+      this.setState({topMenu: "active"})
+      document.body.classList.add('active');
+    } else {
+      this.setState({topMenu: "closed"})
+      document.body.classList.remove('active');
+    }
+  }
   render () {
     return (
-      <HomePageStyle>
+      <HomePageStyle active={this.state.topMenu === 'active' ? true : null}>
       <AirBnBNav toggleMenu={this.toggleMenu}/>
       <div class="hero">
         <header class="header">
-          <div class="logo">
+          <div 
+            class={`logo ${this.state.topMenu}`}
+            onClick={this.toggleTopMenu}
+          >
             <h2>Raíces</h2>
+            {/* icon here  */}
+            <div class="icons">
+              <FontAwesomeIcon icon={falCaretDown} class={this.state.topMenu === 'active' ? 'open' : null}/>
+            </div>
           </div>
-          <nav class="main-nav">
-            <a href="#">Become a Host</a>
-            <a href="#">Help</a>
-            <a href="#">Sign up</a>
-            <a href="#">Log in</a>
-          </nav>
+          <div class={`topMenu ${this.state.topMenu}`}>      
+            <div class={`back ${this.state.topMenu}`}></div>         
+              <nav>
+                <ul>
+                  <div class="home">
+                    <li><a href="#">Home</a></li>
+                  </div>
+                  <div class="share">
+                    <li><a href="#"><div class="outer"><div class="inner">Download the app</div></div></a></li>
+                    <li><a href="#"><div class="outer"><div class="inner">Invite friends</div></div></a></li>
+                    <li><a href="#"><div class="outer"><div class="inner">Refer a home owner</div></div></a></li>
+                  </div>
+                  <div class="international">
+                    <li><a href="#"><div class="outer"><div class="inner">Language</div></div></a></li>
+                    <li><a href="#"><div class="outer"><div class="inner">Currency</div></div></a></li>
+                  </div>
+                  <div class="help">
+                    <li><a href="#"><div class="outer"><div class="inner">Sell your home</div></div></a></li>
+                    <li><a href="#"><div class="outer"><div class="inner">Learn about selling your home</div></div></a></li>
+                    <li><a href="#"><div class="outer"><div class="inner">Help </div></div></a></li>
+                  </div>
+                  <div class="auth">
+                    <li><a href="#"><div class="outer"><div class="inner">Sign up</div></div></a></li>
+                    <li><a href="#"><div class="outer"><div class="inner">Sign in</div></div></a></li>  
+                  </div>          
+                </ul>
+              </nav>
+            </div>      
         </header>
 
         <div class="container search-form-container">

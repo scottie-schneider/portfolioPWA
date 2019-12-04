@@ -88,6 +88,9 @@ const GlobalStyle = createGlobalStyle`
       font-family: 'Fira Sans', sans-serif; 
       background-color: #F7F8FA;
     }
+    body.active {
+      overflow: hidden;
+    }
     a {
       text-decoration: none;
       color: ${theme.black};

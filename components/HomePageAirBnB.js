@@ -489,7 +489,7 @@ export default function HomePageAirBnB() {
           <h2>Unique homes for your next trip</h2>
           <div class="cards-container">
             <div class="card">
-              <img src="img/lodgement1.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment3.jpg" alt=""/>
               <div class="info">
                 <p class="category lodgement">
                   Beautiful house on the beach
@@ -501,7 +501,7 @@ export default function HomePageAirBnB() {
               </div>
             </div> 
             <div class="card">
-              <img src="img/lodgement2.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment4.jpg" alt=""/>
               <div class="info">
                 <p class="category lodgement">
                   1 room in Los Angeles
@@ -513,7 +513,7 @@ export default function HomePageAirBnB() {
               </div>
             </div> 
             <div class="card">
-              <img src="img/lodgement3.jpg" alt=""/>
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment5.jpg" alt=""/>
               <div class="info">
                 <p class="category lodgement">
                   Cottage in the woods

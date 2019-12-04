@@ -18,7 +18,7 @@ Router.onRouteChangeError = () => {
 
 const PortfolioNavStyle = styled.div`
   .header-portfolio-nav {
-    display: flex;
+    display: none;
   }
   .simple {
     display: block;
@@ -94,7 +94,7 @@ const PortfolioNavStyle = styled.div`
   }
 `
 
-const PortfolioNav = () => (
+const PortfolioNav = (props) => (
   <PortfolioNavStyle>
     <header class="header-portfolio-nav">
       <div class="site-name">                
@@ -102,10 +102,10 @@ const PortfolioNav = () => (
       </div>
       <nav class="simple">
         <ul>
+            <li><a href="#">Dash</a></li>
             <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Agent</a></li>
+            <li><a onClick={props.toggleMenu}>More</a></li>
         </ul>
       </nav>
     </header>

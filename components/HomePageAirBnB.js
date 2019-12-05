@@ -361,26 +361,7 @@ const HomePageStyle = styled.div`
     margin-bottom: 2rem;
   }
   
-  .cards-container.agent {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, 170px);
-    justify-content: center;
-  }
-  @media (min-width: 768px) {
-    .cards-container.agent {
-      justify-content: flex-start;
-    }
-  }
-  .cards-container .show {
-    display: grid;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    justify-content: center;
-    align-items: center;
-  }
+
   
   .countries .cards-container {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -391,10 +372,17 @@ const HomePageStyle = styled.div`
     height: 210px;
     border-radius: 5px;
   }
+  /* The Agent Category Card */
   .card.agent img {
-    height: 180px;
+    object-fit: cover;
   }
-  
+  .cards-container.agent {
+    display: grid;    
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 175px));
+    justify-items: center;
+  }
+  /* End Agent Category Card */
   .card .category {
     text-transform: uppercase;
     font-size: .9rem;
@@ -650,7 +638,7 @@ class HomePageAirBnB extends Component {
                 </div>
               </div>               
             </div>   
-            <div class="card show"><span className="text">Show all neighborhoods ></span></div>                    
+            <div class="card show"><span>Show all neighborhoods ></span></div>                    
           </section>
           <section class="explore">
             <h2>Nearby Towns</h2>
@@ -690,7 +678,7 @@ class HomePageAirBnB extends Component {
           </section>
           <section class="hosting">
             <h2>Unique homes for your next trip</h2>
-            <div class="cards-container">
+            <div class="cards-container">              
               <div class="card">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment3.jpg" alt=""/>
                 <div class="info">
@@ -702,7 +690,7 @@ class HomePageAirBnB extends Component {
                   </p>
                   <p class="price">$3,200 per night</p>
                 </div>
-              </div> 
+              </div>               
               <div class="card">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment4.jpg" alt=""/>
                 <div class="info">
@@ -734,6 +722,7 @@ class HomePageAirBnB extends Component {
           <section class="explore">
             <h2>Top rated agents</h2>
             <div class="cards-container agent">
+              {/* The Agent Category Card */}
               <div class="card agent">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/Lori_Diggs.jpg" alt=""/>
                 <div class="info">
@@ -746,6 +735,7 @@ class HomePageAirBnB extends Component {
                   <p class="price">12 homes listed</p>
                 </div>
               </div> 
+              {/* The Agent Category Card */}
               <div class="card agent">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/Jim_Johnson.jpg" alt=""/>
                 <div class="info">

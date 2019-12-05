@@ -373,14 +373,17 @@ const HomePageStyle = styled.div`
     border-radius: 5px;
   }
   /* The Agent Category Card */
+  .card.agent {
+    border: 1px solid red;
+  }
   .card.agent img {
     object-fit: cover;
   }
   .cards-container.agent {
+    border: 1px solid blue;
     display: grid;    
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(75px, 175px));
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(125px, max-content));
   }
   /* End Agent Category Card */
   .card .category {
@@ -718,7 +721,6 @@ class HomePageAirBnB extends Component {
             </div> 
             <div class="card show"><span>Show all homes ></span></div>
           </section>
-
           <section class="explore">
             <h2>Top rated agents</h2>
             <div class="cards-container agent">

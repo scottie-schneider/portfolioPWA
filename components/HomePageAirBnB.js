@@ -24,17 +24,7 @@ const HomePageStyle = styled.div`
     width: 35px;
     height: 35px;
   }
-  .icons svg {
-    height: 20px;
-    width: 20px;
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-  }
-  .icons i {
-    font-size: 1rem;
-  }
+
   body {
     min-height: 100%;
     background: linear-gradient(to top, #dfe9f3 0%, white 100%);
@@ -48,16 +38,16 @@ const HomePageStyle = styled.div`
   }
   /** Colors and Categroes **/
   .lodgement {
-  color: #274154;
+    color: #274154;
   }
   .concert {
-  color: #da595e;
+    color: #da595e;
   }
   .class {
-  color: #598dda;
+    color: #598dda;
   }
   .outdoor-activity {
-  color: #940ad4;
+    color: #940ad4;
   }
 
   h1 {
@@ -74,14 +64,7 @@ const HomePageStyle = styled.div`
   img {
     max-width: 100%;
   }
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .content.container {
-    margin-bottom: 63px;
-  }
+
   .hero {
     height: 100vh;
     background-image: url(https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575321901/Raices/Medellin/colombia-2722716.jpg);
@@ -90,6 +73,7 @@ const HomePageStyle = styled.div`
     display: grid;
     grid-template-rows: 150px auto;
   }
+  /* The Top Drop Down Menu Activator */
   .header {
     display: grid;
     grid-template-columns: 10% auto 30%;
@@ -98,58 +82,6 @@ const HomePageStyle = styled.div`
     padding-left: 1rem;
     align-items: flex-start;
   }
-  .topMenu {
-  position: fixed;
-  width: 100%;
-  max-width: 100%;
-  top: -300%;
-  left: 0;
-  background-color: #fff;
-  transition: top .5s ease-in-out;
-  max-height: 100%;
-  z-index: 10;
-  overflow-y: scroll;
-}
-.topMenu.active {
-  top: 0;
-}
-.topMenu nav {
-  padding-top: 5rem;
-  padding-bottom: 3rem;
-}
-.topMenu nav ul {
-  display: grid;
-  list-style-type: none;
-  grid-row-gap: 20px;
-}
-.topMenu a {
-  text-decoration: none;
-  color: grey;
-}
-.topMenu nav ul .share {  
-  display: grid;
-  grid-row-gap: 2rem;
-  border-top: 1px solid lightgrey;
-  padding-top: 2rem;
-}
-.topMenu nav ul .international {
-  display: grid;
-  grid-row-gap: 2rem;
-  border-top: 1px solid lightgrey;
-  padding-top: 2rem;
-}
-.topMenu nav ul .help {
-  display: grid;
-  grid-row-gap: 2rem;;
-  border-top: 1px solid lightgrey;
-  padding-top: 2rem;
-}
-.topMenu nav ul .auth {
-  display: grid;
-  grid-row-gap: 2rem;
-  border-top: 1px solid lightgrey;
-  padding-top: 2rem;
-}
   .logo {
     display: inline-flex;
     flex: 1;
@@ -161,7 +93,6 @@ const HomePageStyle = styled.div`
     padding-left: 1.4rem;
     padding-right: 1rem;
   }
-  /* when menu is displayed, apply dark color to h2  */
   .logo.active h2 {
     color: black;
   }
@@ -177,6 +108,71 @@ const HomePageStyle = styled.div`
     transition: transform .3s linear;
     color: black;
     text-align: center;
+  }  
+  .icons svg {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+  .icons i {
+    font-size: 1rem;
+  }
+  /* End Top Drop Down Menu Activator */
+  /* The Top Drop Down Menu */
+  .topMenu {
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    top: -300%;
+    left: 0;
+    background-color: #fff;
+    transition: top .5s ease-in-out;
+    max-height: 100%;
+    z-index: 10;
+    overflow-y: scroll;
+  }
+  .topMenu.active {
+    top: 0;
+  }
+  .topMenu nav {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+  .topMenu nav ul {
+    display: grid;
+    list-style-type: none;
+    grid-row-gap: 20px;
+  }
+  .topMenu a {
+    text-decoration: none;
+    color: grey;
+  }
+  .topMenu nav ul .share {  
+    display: grid;
+    grid-row-gap: 2rem;
+    border-top: 1px solid lightgrey;
+    padding-top: 2rem;
+  }
+  .topMenu nav ul .international {
+    display: grid;
+    grid-row-gap: 2rem;
+    border-top: 1px solid lightgrey;
+    padding-top: 2rem;
+  }
+  .topMenu nav ul .help {
+    display: grid;
+    grid-row-gap: 2rem;;
+    border-top: 1px solid lightgrey;
+    padding-top: 2rem;
+  }
+  .topMenu nav ul .auth {
+    display: grid;
+    grid-row-gap: 2rem;
+    border-top: 1px solid lightgrey;
+    padding-top: 2rem;
   }
   .back.active {
     top: 0;
@@ -193,27 +189,8 @@ const HomePageStyle = styled.div`
     max-height: 100%;
     z-index: 11;
   }
-  .main-nav {
-    display: none;
-  }
-  @media (min-width: 768px) {
-    .main-nav {
-      grid-column: 3 / 4;
-      display: grid;
-      justify-content: flex-end;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    }
-    .main-nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: .8rem;
-      padding: 1rem 1rem 2rem 1rem;
-      text-align: center;
-    }
-    .main-nav a:hover {
-      border-bottom: 1px solid #fff;
-    }
-  }
+  /* End Top Drop Down Menu */
+  /* The Floating Form */
   .search-form-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -290,89 +267,15 @@ const HomePageStyle = styled.div`
     border-radius: 5px;
     border:none;
   }
-
-  main > section {
-    margin-bottom: 2rem;
+  /* End Floating Form */
+  /* The Full Image Card */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  .cards-container {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-  .cards-container.agent {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, 170px);
-    justify-content: center;
-  }
-  @media (min-width: 768px) {
-    .cards-container.agent {
-      justify-content: flex-start;
-    }
-  }
-  .cards-container .show {
-    display: grid;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    justify-content: center;
-    align-items: center;
-  }
-  .card.show {
-    display: grid;
-    margin-top: 1rem;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 200px;
-  }
-  .card.show:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-  .countries .cards-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-  .card.neighborhoods img{
-    width: 100%;
-    height: 315px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
-  .card img {
-    display: block;
-    width: 100%;
-    height: 210px;
-    border-radius: 5px;
-  }
-  .card.agent img {
-    height: 180px;
-  }
-  .card .info {
-    padding-top: 1rem;
-  }
-  .card .category {
-    text-transform: uppercase;
-    font-size: .9rem;
-    font-weight: 700;
-  }
-  .card .title {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 0;
-  }
-  .card .price {
-    font-size: .9rem;
-  }
-  .card .price.new {
-    background-color: rgb(0, 119, 126);
-    padding: .4rem .4rem .4rem .4rem;
-    color: #fff;
-    border-radius: 5px;
+  .content.container {
+    margin-bottom: 63px;
   }
   .countries .card {
     position: relative;
@@ -393,6 +296,125 @@ const HomePageStyle = styled.div`
   .countries .info .price {
     font-size: .8rem;
   }
+  .cards-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .card.neighborhoods img{
+    width: 100%;
+    height: 315px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  .card .info {
+    padding-top: 1rem;
+  }
+  /* End Full Image Card */
+  /* The Show All Divider */
+  .card.show {
+    display: grid;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #fff;
+    border-radius: 5px;        
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 1px solid #484848;
+    color: #484848;
+  }
+  @media (min-width: 768px) {
+    .card.show {
+      border: none;
+      justify-content: flex-start;
+    }
+    .card.show:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  /* End Show All Divider */
+  .main-nav {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .main-nav {
+      grid-column: 3 / 4;
+      display: grid;
+      justify-content: flex-end;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: .8rem;
+      padding: 1rem 1rem 2rem 1rem;
+      text-align: center;
+    }
+    .main-nav a:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  main > section {
+    margin-bottom: 2rem;
+  }
+  
+  .cards-container.agent {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 170px);
+    justify-content: center;
+  }
+  @media (min-width: 768px) {
+    .cards-container.agent {
+      justify-content: flex-start;
+    }
+  }
+  .cards-container .show {
+    display: grid;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .countries .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    border-radius: 5px;
+  }
+  .card.agent img {
+    height: 180px;
+  }
+  
+  .card .category {
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 700;
+  }
+  .card .title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .card .price {
+    font-size: .9rem;
+  }
+  .card .price.new {
+    background-color: rgb(0, 119, 126);
+    padding: .4rem .4rem .4rem .4rem;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
   .footerBtn {
     display: none;
   }
@@ -497,7 +519,6 @@ class HomePageAirBnB extends Component {
     }
   }
   toggleTopMenu = () => {
-    
     if(this.state.topMenu === "closed"){
       this.setState({topMenu: "active"})
       document.body.classList.add('active');
@@ -509,19 +530,21 @@ class HomePageAirBnB extends Component {
   render () {
     return (
       <HomePageStyle active={this.state.topMenu === 'active' ? true : null}>
-      <AirBnBNav toggleMenu={this.toggleMenu}/>
+      <AirBnBNav toggleMenu={this.toggleMenu}/>      
       <div class="hero">
         <header class="header">
+          {/* The Top Drop Down Menu Activator */}
           <div 
             class={`logo ${this.state.topMenu}`}
             onClick={this.toggleTopMenu}
           >
-            <h2>Raíces</h2>
-            {/* icon here  */}
+            <h2>Raíces</h2>            
             <div class="icons">
               <FontAwesomeIcon icon={falCaretDown} class={this.state.topMenu === 'active' ? 'open' : null}/>
             </div>
           </div>
+          {/* End Top Drop Down Menu Activator */}
+          {/* The Top Drop Down Menu */}
           <div class={`topMenu ${this.state.topMenu}`}>      
             <div class={`back ${this.state.topMenu}`}></div>         
               <nav>
@@ -549,9 +572,10 @@ class HomePageAirBnB extends Component {
                   </div>          
                 </ul>
               </nav>
-            </div>      
+            </div> 
+            {/* End Top Drop Down Menu */}     
         </header>
-
+        {/* The Floating Form */}
         <div class="container search-form-container">
             <div class="search-form">
                 <h1>Book unique homes and experiences.</h1>
@@ -582,8 +606,10 @@ class HomePageAirBnB extends Component {
                     </div>
                 </form>
             </div>
-        </div>     
+        </div> 
+        {/* End Floating Form */}    
       </div>
+      {/* The Card Holder */}
       <main class="content container">
           <section class="countries">
             <h2>Neighborhoods</h2>
@@ -622,9 +648,9 @@ class HomePageAirBnB extends Component {
                   <p class="title">El Centro</p>
                   <p class="price">$84,000 USD Average</p>
                 </div>
-              </div>           
-            </div> 
-            <div class="card show"><span>Show all neighborhoods ></span></div>
+              </div>               
+            </div>   
+            <div class="card show"><span className="text">Show all neighborhoods ></span></div>                    
           </section>
           <section class="explore">
             <h2>Nearby Towns</h2>
@@ -799,7 +825,6 @@ class HomePageAirBnB extends Component {
               </nav>
             </div>         
           </div>
-
         </footer>
         <a 
           href="#footer" 

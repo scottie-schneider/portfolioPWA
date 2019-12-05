@@ -94,7 +94,7 @@ const PortfolioNavStyle = styled.div`
   }
 `
 
-const PortfolioNav = (props) => (
+const AirBnBNav = (props) => (
   <PortfolioNavStyle>
     <header class="header-portfolio-nav">
       <div class="site-name">                
@@ -112,4 +112,4 @@ const PortfolioNav = (props) => (
   </PortfolioNavStyle>
 );
 
-export default PortfolioNav;
+export default AirBnBNav;

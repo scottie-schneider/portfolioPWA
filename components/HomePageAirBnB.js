@@ -195,6 +195,8 @@ const HomePageStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
+    width: 90%;
+    margin: 0 auto;
   }
   @media (min-width: 768px) {
     .search-form-container {
@@ -269,12 +271,26 @@ const HomePageStyle = styled.div`
   }
   /* End Floating Form */
   /* The Full Image Card */
-  .container {
+  .cards-container {
     width: 90%;
-    max-width: 1200px;
     margin: 0 auto;
   }
+  .content h2 {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+  .countries .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .container {    
+    margin: 0 auto;
+  }
+  section {
+    margin-top: 40px;
+  }
   .content.container {
+    margin-top: 3rem;
     margin-bottom: 63px;
   }
   .countries .card {
@@ -288,6 +304,7 @@ const HomePageStyle = styled.div`
     color: #fff;
     text-align: center;  
   }
+  
   .countries .info .title {
     font-size: 1.4rem;
     font-weight: bold;
@@ -311,6 +328,40 @@ const HomePageStyle = styled.div`
     padding-top: 1rem;
   }
   /* End Full Image Card */
+  /* The Jumbo Card */
+  .jumbo-container {
+    height: 400px;
+    background-image: url(https://res.cloudinary.com/dvqw5uhrr/image/upload/v1575586686/Raices/cookingclass.jpg);
+    background-position: bottom center;  
+    background-size: cover;
+    background-position: bottom center;
+    display: grid;
+    margin: 0 auto;
+  }
+  @media (min-width: 1440px){
+    .jumbo-container {
+      border-radius: 8px;
+      max-width: 1292px;
+    }
+  }
+  .jumbo {
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+  }
+  .learnButton {
+    margin-top: 40px;
+    height: 43px;
+    width: 133px;
+  }
+  .learnButton span {
+    color: black;
+    background-color: #fff;   
+    padding: 14px 24px; 
+    border-radius: 8px;
+  }
+  /* End Jumbo Card */
+
   /* The Show All Divider */
   .card.show {
     display: grid;
@@ -323,6 +374,8 @@ const HomePageStyle = styled.div`
     height: 50px;
     border: 1px solid #484848;
     color: #484848;
+    width: 90%;
+    margin: 0 auto;
   }
   @media (min-width: 768px) {
     .card.show {
@@ -333,7 +386,6 @@ const HomePageStyle = styled.div`
       text-decoration: underline;
     }
   }
-  
   /* End Show All Divider */
   .main-nav {
     display: none;
@@ -361,29 +413,29 @@ const HomePageStyle = styled.div`
     margin-bottom: 2rem;
   }
   
-
-  
-  .countries .cards-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
   .card img {
     display: block;
-    width: 100%;
-    height: 210px;
+    width: 100%;    
     border-radius: 5px;
   }
   /* The Agent Category Card */
-  .card.agent {
-    border: 1px solid red;
+  .info .name {
+    overflow-wrap: break-word;
   }
   .card.agent img {
     object-fit: cover;
   }
   .cards-container.agent {
-    border: 1px solid blue;
     display: grid;    
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(125px, max-content));
+    /* grid-template-columns: repeat(auto-fit, minmax(125px, max-content)); */
+    grid-template-columns: repeat(auto-fit, 165px);    
+    justify-content: center;
+  }
+  @media (min-width: 768px){
+    .cards-container.agent {
+      justify-content: flex-start;
+    }
   }
   /* End Agent Category Card */
   .card .category {
@@ -599,12 +651,12 @@ class HomePageAirBnB extends Component {
             </div>
         </div> 
         {/* End Floating Form */}    
-      </div>
-      {/* The Card Holder */}
+      </div>      
       <main class="content container">
           <section class="countries">
             <h2>Neighborhoods</h2>
             <div class="cards-container">
+              {/* The Full Image Cards */}
               <div class="card neighborhoods">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575403179/Raices/Poblado/poblado.jpg" alt=""/>
                 <div class="info">
@@ -612,6 +664,7 @@ class HomePageAirBnB extends Component {
                   <p class="price">$210,000 USD Average</p>
                 </div>
               </div> 
+              {/* End Full Image Cards */}
               <div class="card neighborhoods">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575403683/Raices/Envigado/envigado.png" alt=""/>
                 <div class="info">
@@ -643,6 +696,16 @@ class HomePageAirBnB extends Component {
             </div>   
             <div class="card show"><span>Show all neighborhoods ></span></div>                    
           </section>
+          {/* The Jumbo Card */}
+          <section className="jumbo-container">
+            <div className="jumbo">
+              <h3>Introducing</h3>
+              <span>Cooking</span>
+              <h2>On Raíces Experiences</h2>
+              <div className="learnButton"><span>Learn more</span></div>
+            </div>
+          </section>
+          {/* End Jumbo Card */}
           <section class="explore">
             <h2>Nearby Towns</h2>
             <div class="cards-container">
@@ -673,9 +736,6 @@ class HomePageAirBnB extends Component {
                   <p class="price">13 homes</p>
                 </div>
               </div> 
-            
-            
-                
             </div> 
             <div class="card show"><span>Show all towns ></span></div>
           </section>
@@ -726,49 +786,49 @@ class HomePageAirBnB extends Component {
             <div class="cards-container agent">
               {/* The Agent Category Card */}
               <div class="card agent">
-                <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/Lori_Diggs.jpg" alt=""/>
+                <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/g_face,c_fill,w_165,h_210/v1570485457/Raices/AgentPhotos/Lori_Diggs.jpg" alt=""/>
                 <div class="info">
                   <p class="category class">
                     Negotiations
                   </p>
-                  <p class="title">
+                  <p class="name">
                     Jennifer Smith
                   </p>
                   <p class="price">12 homes listed</p>
                 </div>
               </div> 
-              {/* The Agent Category Card */}
+              {/* End Agent Category Card */}
               <div class="card agent">
-                <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/Jim_Johnson.jpg" alt=""/>
+                <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/g_face,c_fill,w_165,h_210/v1570485457/Raices/AgentPhotos/Jim_Johnson.jpg" alt=""/>
                 <div class="info">
                   <p class="category concert">
                     New Contructions
                   </p>
-                  <p class="title">
+                  <p class="name">
                     James Bannon
                   </p>
                   <p class="price">24 homes sold</p>
                 </div>
               </div> 
               <div class="card agent">
-                <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/James_Kim.jpg" alt=""/>
+                <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/g_face,c_fill,w_165,h_210/v1570485457/Raices/AgentPhotos/James_Kim.jpg" alt=""/>
                 <div class="info">
                   <p class="category class">
                     Contracts
                   </p>
-                  <p class="title">
+                  <p class="name">
                     James Kim
                   </p>
                   <p class="price new">New Agent</p>
                 </div>
               </div>
               <div class="card agent">
-                <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1570485457/Raices/AgentPhotos/Jill_Smith.jpg" alt=""/>
+                <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/g_face,c_fill,w_165,h_210/v1570485457/Raices/AgentPhotos/Jill_Smith.jpg" alt=""/>
                 <div class="info">
                   <p class="category outdoor-activity">
                     First Time Buyers
                   </p>
-                  <p class="title">
+                  <p class="name">
                     Natalio Giraldo-Hincapie
                   </p>
                   <p class="price">30 homes sold</p>

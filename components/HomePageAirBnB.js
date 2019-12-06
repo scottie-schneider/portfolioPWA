@@ -283,6 +283,7 @@ const HomePageStyle = styled.div`
   .countries .cards-container {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
+
   .container {    
     margin: 0 auto;
   }
@@ -327,6 +328,9 @@ const HomePageStyle = styled.div`
   .card .info {
     padding-top: 1rem;
   }
+  .card img {
+    width: 100%;
+  }
   /* End Full Image Card */
   /* The Jumbo Card */
   .jumbo-container {
@@ -361,6 +365,70 @@ const HomePageStyle = styled.div`
     border-radius: 8px;
   }
   /* End Jumbo Card */
+  /* The Wide Image Card ie., nearby towns*/
+  .card.wide img {
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  /* End Wide Image Card */
+  /* The Home Image Card */
+  .card.home img {
+    width: 100%;
+    height: 230px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  /* End Home Image Card */
+  /* The Mini Jumbo */
+  .miniJumbo {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .miniJumbo h2 {
+    margin: 0;
+  }
+  .miniJumbo .imageOverlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    height: 300px;
+  }
+  .miniJumbo .imageOverlay .text {
+    position: absolute;
+    top: 50%;    
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;    
+  }
+  .miniJumbo .imageOverlay .text p {
+    background-color: #fff;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .miniJumbo img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .miniJumbo .image .span,
+  .miniJumbo .image .button {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+  }
+  .miniJumbo .image .button {
+    top: 30px;
+    margin: 0 auto;
+  }
+  /* End Mini Jumbo */
 
   /* The Show All Divider */
   .card.show {
@@ -420,13 +488,14 @@ const HomePageStyle = styled.div`
   }
   /* The Agent Category Card */
   .info .name {
+    /* I use overflow wrap to ensure the text breaks if needed */
     overflow-wrap: break-word;
   }
   .card.agent img {
     object-fit: cover;
   }
   .cards-container.agent {
-    display: grid;    
+    display: grid;  
     grid-gap: 1rem;
     /* grid-template-columns: repeat(auto-fit, minmax(125px, max-content)); */
     grid-template-columns: repeat(auto-fit, 165px);    
@@ -460,6 +529,7 @@ const HomePageStyle = styled.div`
   
   .footerBtn {
     display: none;
+    z-index: 3;
   }
   @media(min-width: 768px){
     .footerBtn {
@@ -709,7 +779,8 @@ class HomePageAirBnB extends Component {
           <section class="explore">
             <h2>Nearby Towns</h2>
             <div class="cards-container">
-              <div class="card">
+              {/* The Wide Image Card */}
+              <div class="card wide">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575405400/Raices/San%20Rafael/sanrafael.jpg" alt=""/>
                 <div class="info">          
                   <p class="title">
@@ -718,7 +789,8 @@ class HomePageAirBnB extends Component {
                   <p class="price">12 homes</p>
                 </div>
               </div> 
-              <div class="card">
+              {/* End Wide Image Card */}
+              <div class="card wide">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575405590/Raices/Guatape/guatape.jpg" alt=""/>
                 <div class="info">
                   <p class="title">
@@ -727,7 +799,7 @@ class HomePageAirBnB extends Component {
                   <p class="price">17 homes</p>
                 </div>
               </div> 
-              <div class="card">
+              <div class="card wide">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575406654/Raices/Santa%20Fe%20de%20Antoquia/santafedeantoquia.jpg" alt=""/>
                 <div class="info">
                   <p class="title">
@@ -739,10 +811,23 @@ class HomePageAirBnB extends Component {
             </div> 
             <div class="card show"><span>Show all towns ></span></div>
           </section>
+          {/* The Mini Jumbo */}
+          <section className="miniJumbo">
+            <h2>AirBnB Plus places to stay</h2>
+            <h4>A selection of places to stay, verified for quality and design</h4>            
+            <div className="imageOverlay">
+              <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment5.jpg" alt=""/>
+              <div className="text">              
+                <h3>Plus</h3>
+                <p>Explore Stays</p>
+              </div>
+            </div>
+          </section>
+          {/* End Mini Jumbo */}
           <section class="hosting">
             <h2>Unique homes for your next trip</h2>
             <div class="cards-container">              
-              <div class="card">
+              <div class="card home">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment3.jpg" alt=""/>
                 <div class="info">
                   <p class="category lodgement">
@@ -754,7 +839,7 @@ class HomePageAirBnB extends Component {
                   <p class="price">$3,200 per night</p>
                 </div>
               </div>               
-              <div class="card">
+              <div class="card home">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment4.jpg" alt=""/>
                 <div class="info">
                   <p class="category lodgement">
@@ -766,7 +851,7 @@ class HomePageAirBnB extends Component {
                   <p class="price">$2,100 per night</p>
                 </div>
               </div> 
-              <div class="card">
+              <div class="card home">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment5.jpg" alt=""/>
                 <div class="info">
                   <p class="category lodgement">

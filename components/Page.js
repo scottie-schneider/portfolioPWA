@@ -104,7 +104,6 @@ const GlobalStyle = createGlobalStyle`
       background: rgba(0, 0, 0, 0.4);
     }  
   }
-  
 `
 
 import WrapperDiv from './WrapperDiv';

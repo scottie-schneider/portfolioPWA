@@ -36,19 +36,7 @@ const HomePageStyle = styled.div`
   @media(min-width: 768px) {
     margin-bottom: 0;
   }
-  /** Colors and Categroes **/
-  .lodgement {
-    color: #274154;
-  }
-  .concert {
-    color: #da595e;
-  }
-  .class {
-    color: #598dda;
-  }
-  .outdoor-activity {
-    color: #940ad4;
-  }
+  
 
   h1 {
     font-weight: 700;
@@ -74,123 +62,8 @@ const HomePageStyle = styled.div`
     display: grid;
     grid-template-rows: 150px auto;
   }
-  /* The Top Drop Down Menu Activator */
-  .header {
-    display: grid;
-    grid-template-columns: 10% auto 30%;
-    width: 100%;
-    height: 65px; 
-    padding-left: 1rem;
-    align-items: flex-start;
-  }
-  .logo {
-    display: inline-flex;
-    flex: 1;
-    align-items: center;
-    z-index: 13;  
-  }
-  .logo h2 {
-    color: #fff;
-    padding-left: 1.4rem;
-    padding-right: 1rem;
-  }
-  .logo.active h2 {
-    color: black;
-  }
-  .logo svg {
-    color: white;
-    transform: rotate(0deg);
-    transition: transform .3s linear;  
-    vertical-align: middle;
-    text-align: center;
-  }
-  .logo svg.open {    
-    transform: rotate(180deg);
-    transition: transform .3s linear;
-    color: black;
-    text-align: center;
-  }  
-  .icons svg {
-    height: 20px;
-    width: 20px;
-    display: flex;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-  }
-  .icons i {
-    font-size: 1rem;
-  }
-  /* End Top Drop Down Menu Activator */
-  /* The Top Drop Down Menu */
-  .topMenu {
-    position: fixed;
-    width: 100%;
-    max-width: 100%;
-    top: -300%;
-    left: 0;
-    background-color: #fff;
-    transition: top .5s ease-in-out;
-    max-height: 100%;
-    z-index: 10;
-    overflow-y: scroll;
-  }
-  .topMenu.active {
-    top: 0;
-  }
-  .topMenu nav {
-    padding-top: 5rem;
-    padding-bottom: 3rem;
-  }
-  .topMenu nav ul {
-    display: grid;
-    list-style-type: none;
-    grid-row-gap: 20px;
-  }
-  .topMenu a {
-    text-decoration: none;
-    color: grey;
-  }
-  .topMenu nav ul .share {  
-    display: grid;
-    grid-row-gap: 2rem;
-    border-top: 1px solid lightgrey;
-    padding-top: 2rem;
-  }
-  .topMenu nav ul .international {
-    display: grid;
-    grid-row-gap: 2rem;
-    border-top: 1px solid lightgrey;
-    padding-top: 2rem;
-  }
-  .topMenu nav ul .help {
-    display: grid;
-    grid-row-gap: 2rem;;
-    border-top: 1px solid lightgrey;
-    padding-top: 2rem;
-  }
-  .topMenu nav ul .auth {
-    display: grid;
-    grid-row-gap: 2rem;
-    border-top: 1px solid lightgrey;
-    padding-top: 2rem;
-  }
-  .back.active {
-    top: 0;
-  }
-  .back {
-    position: fixed;
-    width: 100%;
-    height: 70px;
-    max-width: 100%;
-    top: -300%;
-    left: 0;
-    background-color: #fff;
-    transition: top .5s ease-in-out;
-    max-height: 100%;
-    z-index: 11;
-  }
-  /* End Top Drop Down Menu */
+  
+  
   /* The Floating Form */
   .search-form-container {
     display: grid;
@@ -271,68 +144,7 @@ const HomePageStyle = styled.div`
     border:none;
   }
   /* End Floating Form */
-  /* The Full Image Card */
-  .cards-container {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .content h2 {
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-  }
-  .countries .cards-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .container {    
-    margin: 0 auto;
-  }
-  section {
-    margin-top: 40px;
-  }
-  .content.container {
-    margin-top: 3rem;
-    margin-bottom: 63px;
-  }
-  .countries .card {
-    position: relative;
-  }
-  .countries .info {
-    position: absolute;
-    width: 100%;
-    bottom: 1rem;
-    left: 0;
-    color: #fff;
-    text-align: center;  
-  }
   
-  .countries .info .title {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin: 0;
-  }
-  .countries .info .price {
-    font-size: .8rem;
-  }
-  .cards-container {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-  .card.neighborhoods img{
-    width: 100%;
-    height: 315px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
-  .card .info {
-    padding-top: 1rem;
-  }
-  .card img {
-    width: 100%;
-  }
-  /* End Full Image Card */
   /* The Jumbo Card */
   .jumbo-container {
     height: 400px;
@@ -342,6 +154,7 @@ const HomePageStyle = styled.div`
     background-position: bottom center;
     display: grid;
     margin: 0 auto;
+    align-items: center;
   }
   @media (min-width: 1440px){
     .jumbo-container {
@@ -353,6 +166,10 @@ const HomePageStyle = styled.div`
     width: 90%;
     margin: 0 auto;
     color: #fff;
+  }
+  .jumbo h2 {
+    margin: 0;
+    width: 100%;
   }
   .learnButton {
     margin-top: 40px;
@@ -366,22 +183,7 @@ const HomePageStyle = styled.div`
     border-radius: 8px;
   }
   /* End Jumbo Card */
-  /* The Wide Image Card ie., nearby towns*/
-  .card.wide img {
-    width: 100%;
-    height: 250px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
-  /* End Wide Image Card */
-  /* The Home Image Card */
-  .card.home img {
-    width: 100%;
-    height: 230px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
-  /* End Home Image Card */
+
   /* The Mini Jumbo */
   .miniJumbo {
     width: 90%;
@@ -431,11 +233,14 @@ const HomePageStyle = styled.div`
   }
   /* End Mini Jumbo */
 
+  
+ 
+
   /* The Show All Divider */
   .card.show {
     display: grid;
     width: 100%;
-    margin-top: 1rem;
+    margin: 1rem auto 1rem auto;
     background-color: #fff;
     border-radius: 5px;        
     justify-content: center;
@@ -444,8 +249,11 @@ const HomePageStyle = styled.div`
     border: 1px solid #484848;
     color: #484848;
     width: 90%;
-    margin: 0 auto;
   }
+  .card.show:hover {
+    cursor: pointer;
+  }
+  
   @media (min-width: 768px) {
     .card.show {
       border: none;
@@ -487,32 +295,8 @@ const HomePageStyle = styled.div`
     width: 100%;    
     border-radius: 5px;
   }
-  /* The Agent Category Card */
-  .info .name {
-    /* I use overflow wrap to ensure the text breaks if needed */
-    overflow-wrap: break-word;
-  }
-  .card.agent img {
-    object-fit: cover;
-  }
-  .cards-container.agent {
-    display: grid;  
-    grid-gap: 1rem;
-    /* grid-template-columns: repeat(auto-fit, minmax(125px, max-content)); */
-    grid-template-columns: repeat(auto-fit, 165px);    
-    justify-content: center;
-  }
-  @media (min-width: 768px){
-    .cards-container.agent {
-      justify-content: flex-start;
-    }
-  }
-  /* End Agent Category Card */
-  .card .category {
-    text-transform: uppercase;
-    font-size: .9rem;
-    font-weight: 700;
-  }
+  
+  
   .card .title {
     font-size: 1.6rem;
     font-weight: 700;
@@ -568,6 +352,7 @@ const HomePageStyle = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 1rem;
     margin-bottom: 1rem;
+    padding-left: 1rem;
   }
   .nav-footer .menu {
     display: grid;
@@ -620,6 +405,238 @@ const HomePageStyle = styled.div`
     display: none;
   }
 `
+const TopDropDownMenu = styled.div`
+  /* The Top Drop Down Menu */
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  top: -300%;
+  left: 0;
+  background-color: #fff;
+  transition: top .5s ease-in-out;
+  max-height: 100%;
+  z-index: 10;
+  overflow-y: scroll;
+  &.active {
+    top: 0;
+  }
+  & nav {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+  & nav ul {
+    display: grid;
+    list-style-type: none;
+    grid-row-gap: 20px;
+    padding-left: 1rem;
+  }
+  & a {
+    text-decoration: none;
+    color: grey;
+  }
+  & nav ul .share {  
+    display: grid;
+    grid-row-gap: 2rem;
+    border-top: 1px solid lightgrey;
+    padding-top: 2rem;
+  }
+  & nav ul .international {
+    display: grid;
+    grid-row-gap: 2rem;
+    border-top: 1px solid lightgrey;
+    padding-top: 2rem;
+  }
+  & nav ul .help {
+    display: grid;
+    grid-row-gap: 2rem;;
+    border-top: 1px solid lightgrey;
+    padding-top: 2rem;
+  }
+  & nav ul .auth {
+    display: grid;
+    grid-row-gap: 2rem;
+    border-top: 1px solid lightgrey;
+    padding-top: 2rem;
+  }
+  .back.active {
+    top: 0;
+  }
+  .back {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    max-width: 100%;
+    top: -300%;
+    left: 0;
+    background-color: #fff;
+    transition: top .5s ease-in-out;
+    max-height: 100%;
+    z-index: 11;
+  }
+  /* End Top Drop Down Menu */
+`
+const TopDropDownMenuActivator = styled.header`
+/* The Top Drop Down Menu Activator */
+  display: grid;
+  grid-template-columns: 10% auto 30%;
+  width: 100%;
+  height: 65px; 
+  padding-left: 1rem;
+  align-items: flex-start;
+  .logo {
+    display: inline-flex;
+    flex: 1;
+    align-items: center;
+    z-index: 13;  
+  }
+  .logo h2 {
+    color: #fff;
+    padding-right: 1rem;
+  }
+  .logo.active h2 {
+    color: black;
+  }
+  .logo svg {
+    color: white;
+    transform: rotate(0deg);
+    transition: transform .3s linear;  
+    vertical-align: middle;
+    text-align: center;
+  }
+  .logo svg.open {    
+    transform: rotate(180deg);
+    transition: transform .3s linear;
+    color: black;
+    text-align: center;
+  }  
+  .icons svg {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+  }
+  .icons i {
+    font-size: 1rem;
+  }
+  /* End Top Drop Down Menu Activator */
+`
+const CardContainer = styled.section`
+  width: 90%;
+  margin: 0 auto;
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(${props => props.cardWidth}, 1fr));
+  }
+  .card {
+    position: relative;
+  }  
+  .category {
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 700;
+  }
+  .name {
+    overflow-wrap: break-word;
+  }
+  .info {
+    position: absolute;
+    width: 100%;
+    bottom: 1rem;
+    left: 0;
+    color: #fff;
+    text-align: center;  
+  }
+  .card .infoFull, .infoAgent {
+    padding-top: 1rem;
+  }
+  .info .title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  .info .price {
+    font-size: .8rem;
+  }
+   /* The Home Image Card */
+   .card.home img {
+    width: 100%;
+    height: 230px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  /* End Home Image Card */
+  /* The Agent Category Card */
+
+  .card.agent img {
+    object-fit: cover;
+  }
+  .cards-container.agent {
+    display: grid;  
+    grid-gap: 1rem;
+    /* grid-template-columns: repeat(auto-fit, minmax(125px, max-content)); */
+    grid-template-columns: repeat(auto-fit, 165px);    
+    justify-content: center;
+  }
+  @media (min-width: 768px){
+    .cards-container.agent {
+      justify-content: flex-start;
+    }
+  }
+  /* End Agent Category Card */
+  /** Colors and Categroes **/
+  .lodgement {
+    color: #274154;
+  }
+  .concert {
+    color: #da595e;
+  }
+  .class {
+    color: #598dda;
+  }
+  .outdoor-activity {
+    color: #940ad4;
+  }
+  /* The Full Image Card */
+  .content h2 {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .container {    
+    margin: 0 auto;
+  }
+  section {
+    margin-top: 40px;
+  }   
+  
+  .cards-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .card.neighborhoods img{
+    width: 100%;
+    height: 315px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .card img {
+    width: 100%;
+  }
+  /* End Full Image Card */
+  /* The Wide Image Card ie., nearby towns*/
+  .card.wide img {
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  /* End Wide Image Card */
+`
+
 class HomePageAirBnB extends Component {
   state = {
     menu: "closed",
@@ -646,7 +663,7 @@ class HomePageAirBnB extends Component {
       <HomePageStyle active={this.state.topMenu === 'active' ? true : null}>
       <AirBnBNav toggleMenu={this.toggleMenu}/>      
       <div class="hero">
-        <header class="header">
+        <TopDropDownMenuActivator>
           {/* The Top Drop Down Menu Activator */}
           <div 
             class={`logo ${this.state.topMenu}`}
@@ -659,7 +676,7 @@ class HomePageAirBnB extends Component {
           </div>
           {/* End Top Drop Down Menu Activator */}
           {/* The Top Drop Down Menu */}
-          <div class={`topMenu ${this.state.topMenu}`}>      
+          <TopDropDownMenu className={this.state.topMenu}>      
             <div class={`back ${this.state.topMenu}`}></div>         
               <nav>
                 <ul>
@@ -686,9 +703,9 @@ class HomePageAirBnB extends Component {
                   </div>          
                 </ul>
               </nav>
-            </div> 
+            </TopDropDownMenu> 
             {/* End Top Drop Down Menu */}     
-        </header>
+        </TopDropDownMenuActivator >
         {/* The Floating Form */}
         <div class="container search-form-container">
             <div class="search-form">
@@ -723,8 +740,8 @@ class HomePageAirBnB extends Component {
         </div> 
         {/* End Floating Form */}    
       </div>      
-      <main class="content container">
-          <section class="countries">
+      <main>
+          <CardContainer cardWidth={'200px'}>
             <h2>Neighborhoods</h2>
             <div class="cards-container">
               {/* The Full Image Cards */}
@@ -764,20 +781,20 @@ class HomePageAirBnB extends Component {
                   <p class="price">$84,000 USD Average</p>
                 </div>
               </div>               
-            </div>   
-            <div class="card show"><span>Show all neighborhoods ></span></div>                    
-          </section>
+            </div>               
+          </CardContainer>
+          <div class="card show"><span>Show all neighborhoods ></span></div>                    
           {/* The Jumbo Card */}
           <section className="jumbo-container">
             <div className="jumbo">
-              <h3>Introducing</h3>
-              <span>Cooking</span>
-              <h2>On Raíces Experiences</h2>
+              <h5>Introducing</h5>
+              <h2>Cooking</h2>
+              <h5>On Raíces Experiences</h5>
               <div className="learnButton"><span>Learn more</span></div>
             </div>
           </section>
           {/* End Jumbo Card */}
-          <section class="explore">
+          <CardContainer>
             <h2>Nearby Towns</h2>
             <div class="cards-container">
               {/* The Wide Image Card */}
@@ -809,9 +826,9 @@ class HomePageAirBnB extends Component {
                   <p class="price">13 homes</p>
                 </div>
               </div> 
-            </div> 
-            <div class="card show"><span>Show all towns ></span></div>
-          </section>
+            </div>             
+          </CardContainer>
+          <div class="card show"><span>Show all towns ></span></div>
           {/* The Mini Jumbo */}
           <section className="miniJumbo">
             <h2>AirBnB Plus places to stay</h2>
@@ -825,12 +842,12 @@ class HomePageAirBnB extends Component {
             </div>
           </section>
           {/* End Mini Jumbo */}
-          <section class="hosting">
+          <CardContainer>
             <h2>Unique homes for your next trip</h2>
             <div class="cards-container">              
               <div class="card home">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment3.jpg" alt=""/>
-                <div class="info">
+                <div class="infoFull">
                   <p class="category lodgement">
                     Beautiful house on the beach
                   </p>
@@ -842,7 +859,7 @@ class HomePageAirBnB extends Component {
               </div>               
               <div class="card home">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment4.jpg" alt=""/>
-                <div class="info">
+                <div class="infoFull">
                   <p class="category lodgement">
                     1 room in Los Angeles
                   </p>
@@ -854,7 +871,7 @@ class HomePageAirBnB extends Component {
               </div> 
               <div class="card home">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/q_auto/v1575420822/Raices/Apartment%20%28samples%29/apartment5.jpg" alt=""/>
-                <div class="info">
+                <div class="infoFull">
                   <p class="category lodgement">
                     Cottage in the woods
                   </p>
@@ -864,16 +881,16 @@ class HomePageAirBnB extends Component {
                   <p class="price">$3,200 per night</p>
                 </div>
               </div>           
-            </div> 
-            <div class="card show"><span>Show all homes ></span></div>
-          </section>
-          <section class="explore">
+            </div>             
+          </CardContainer>
+          <div class="card show"><span>Show all homes ></span></div>
+          <CardContainer>
             <h2>Top rated agents</h2>
             <div class="cards-container agent">
               {/* The Agent Category Card */}
               <div class="card agent">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/g_face,c_fill,w_165,h_210/v1570485457/Raices/AgentPhotos/Lori_Diggs.jpg" alt=""/>
-                <div class="info">
+                <div class="infoAgent">
                   <p class="category class">
                     Negotiations
                   </p>
@@ -886,7 +903,7 @@ class HomePageAirBnB extends Component {
               {/* End Agent Category Card */}
               <div class="card agent">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/g_face,c_fill,w_165,h_210/v1570485457/Raices/AgentPhotos/Jim_Johnson.jpg" alt=""/>
-                <div class="info">
+                <div class="infoAgent">
                   <p class="category concert">
                     New Contructions
                   </p>
@@ -898,7 +915,7 @@ class HomePageAirBnB extends Component {
               </div> 
               <div class="card agent">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/g_face,c_fill,w_165,h_210/v1570485457/Raices/AgentPhotos/James_Kim.jpg" alt=""/>
-                <div class="info">
+                <div class="infoAgent">
                   <p class="category class">
                     Contracts
                   </p>
@@ -922,7 +939,7 @@ class HomePageAirBnB extends Component {
               </div>          
             </div> 
             <div class="card show"><span>Show all agents ></span></div>
-          </section>  
+          </CardContainer>  
         </main>
         <footer id="footer" className={`footer + ${this.state.menu}`}>
           <div class="container">

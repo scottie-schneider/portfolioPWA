@@ -62,19 +62,21 @@ const HomePageStyle = styled.div`
     display: grid;
     grid-template-rows: 150px auto;
   }
-  
+  main {
+    margin-bottom: 4rem;
+  }
   
   /* The Floating Form */
   .search-form-container {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    width: 90%;
+    width: 90vw;    
+    min-width: 200px;
     margin: 0 auto;
   }
   @media (min-width: 768px) {
     .search-form-container {
-      display: grid;
       grid-template-columns: 1fr 2fr;
       align-items: flex-start;
     }
@@ -130,6 +132,7 @@ const HomePageStyle = styled.div`
     padding: .8rem;
     border: 1px solid #e1e1e1;
     background-color: white;
+    overflow: hidden;
   }
   .submit {
     grid-column: 2 / 3;
@@ -606,6 +609,7 @@ const CardContainer = styled.section`
 
   .container {    
     margin: 0 auto;
+    width: 90%;
   }
   section {
     margin-top: 40px;
@@ -927,19 +931,19 @@ class HomePageAirBnB extends Component {
               </div>
               <div class="card agent">
                 <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/g_face,c_fill,w_165,h_210/v1570485457/Raices/AgentPhotos/Jill_Smith.jpg" alt=""/>
-                <div class="info">
+                <div class="infoAgent">
                   <p class="category outdoor-activity">
                     First Time Buyers
                   </p>
                   <p class="name">
-                    Natalio Giraldo-Hincapie
+                    Natalia Giraldo-Hincapie
                   </p>
                   <p class="price">30 homes sold</p>
                 </div>
               </div>          
-            </div> 
-            <div class="card show"><span>Show all agents ></span></div>
+            </div>             
           </CardContainer>  
+          <div class="card show"><span>Show all agents ></span></div>
         </main>
         <footer id="footer" className={`footer + ${this.state.menu}`}>
           <div class="container">

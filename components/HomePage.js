@@ -1,194 +1,246 @@
 import React from 'react';
 import styled from 'styled-components';
 import PortfolioNav from './PortfolioNav';
-import BottomNav from './BottomNav';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt as fasMapMarkerAlt } from '@fortawesome/pro-solid-svg-icons'
 import { faPencilRuler as farPencilRuler } from '@fortawesome/pro-regular-svg-icons';
 import { faCoffeeTogo as farCoffeeTogo } from '@fortawesome/pro-regular-svg-icons';
 import { faFrostyHead as farFrostyHead } from '@fortawesome/pro-regular-svg-icons';
-// import { faRabbit as fasFaRabbit } from '@fortawesome/pro-solid-svg-icons'
-// import { faRabbit as farFaRabbit } from '@fortawesome/pro-regular-svg-icons';
-// import { faRabbit as falFaRabbit } from '@fortawesome/pro-light-svg-icons';
-// import { faRabbit as fadFaRabbit } from '@fortawesome/pro-duotone-svg-icons';
-// import { fromPromise } from 'apollo-link';
+
 import ContactForm from './ContactForm';
 
 const HomePageStyle = styled.div`
-  /* apply a natural box layout model to all elements, but allowing components to change */
-  html {
-    box-sizing: border-box;
-    min-height: 100%;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  svg {
-    width: 35px;
-    height: 35px;
-  }
-  body {
-    font-family: ${props => props.theme.fontFamily};
-    min-height: 100%;
-    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
-  }
-  .button {
-    background-color: ${props => props.theme.secondary};
-    padding: .5rem 3rem;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: .5rem;
-    font-weight: 700;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    border: none;
-    color: ${props => props.theme.white};
-    transition: background-color .3s ease;
-    cursor: pointer;
-  }
-  .button:hover {
-    background-color: rgb(1, 123, 136);
-  }
-  .container {
-    margin: 2rem auto 3rem auto;
-    max-width: 1200px;
-    padding: 2rem;
-    background-color: ${props => props.theme.main};
-    -webkit-box-shadow: 0px 4px 12px -1px rgba(0,0,0,0.6);
-    -moz-box-shadow: 0px 4px 12px -1px rgba(0,0,0,0.6);
-    box-shadow: 0px 4px 12px -1px rgba(0,0,0,0.6);
-    border-radius: 1rem;
-  }
-
-  h2, h3 {
-    text-align: center;
-  }
-
-  h3 {
-    color: ${props => props.theme.secondary};
-    font-weight: 400;
-    font-size: 1.6rem;
-  }
-  p {
-    line-height: 2;
+  * {
+  font-family: 'Fira Sans', sans-serif;
+}
+body {
+  width: 100vw;
+  margin: 0;
+}
+h2, p {
+  color: #7F8C8D;
+}
+ul {
+  list-style: none;
+}
+ul li a {
+  text-decoration: none;
+  color: #000;
+}
+ul li a:hover {
+  text-decoration: underline;
+}
+nav {
+  position: fixed;
+  display: flex;  
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 3;
+  height: 56px;
+  background-color: #fff;
+}
+nav ul {
+  display: flex;
+  flex: 1;
+  list-style: none;
+  justify-content: space-between;
+  padding: .5rem 1rem .5rem 1rem;
+  margin: 0;
+}
+nav ul a {
+  text-decoration: none;
+  color: #7F8C8D;
+}
+nav ul a.active {
+  color: #3498DB;
+}
+/* 600px and above, position at top */
+@media(min-width: 600px){
+  nav {
+    top: 0;
   }
   .hero {
-    height: 450px;
-    background-image: url(https://res.cloudinary.com/dvqw5uhrr/image/upload/v1574288903/Raices/Portfolio%20Site%20%28ScottieSchneider.com%29/hero.jpg);
-    /* background-image: url(../img/hero.jpg); */
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 66px;
   }
+}
+/* Hero section, with image and introduction */
+.hero {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  height: 500px;
+  color: #7F8C8D;
+  padding-top: 5rem;
+}
+.content h1 {
+  font-size: 2.7rem;
+}
+.content p {
+  font-size: 1.3rem;
+}
+.hero span {
+  color: #3498DB;
+}
+/* Content Sections */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.hero .content a {
+  color: #000;
+}
+.content p:first-of-type {
+  margin-top: 2rem;  
+}
 
-  .hero::after {
-    content: '';
-    background-color: rgba(0,0,0, .7);
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-  }
-  .hero-content {
-    color: ${props => props.theme.white};
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    svg {
-      color: ${props => props.theme.primary};
-    }
-  }
-  .hero-content i {
-    font-size: 3rem;
-    color: ${props => props.theme.main};
-  }
-  @media (min-width: 768px) {
-    .services-container {
-      display: flex;
-      justify-content: space-between;
-    }
-    .service {
-      flex: 0 0 calc(33.3% - 1rem);
-    }
-  }
-  .service {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .icons {
-    height: 100px;
-    width: 100px;
-    display: flex;
-    background-color: ${props => props.theme.primary};
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-  }
-  .icons i {
-    font-size: 3rem;
-  }
+/* Portfolio */
+.portfolio {
+  background-color: #fff;
+  height: 100%;
+  margin-bottom: 6rem;
+}
+.portfolio .spacer {
+  background-color: #E74C3C;
+  height: 1rem;
+  margin-top: 3rem;
+}
+.portfolio img {
+  padding-top: 1rem;
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+/* Category Sections */
+.categories {
+  margin-top: 1rem;
+  color: #95A5A6;
+  text-transform: uppercase;
+}
+.categories span {
+  font-size: 1.5rem;
+}
+.portfolio h2 {
+  margin-top: 1rem;
+  color: #000;
+}
+.portfolio h4 {
+  margin-top: 1rem;
+  color: #7F8C8D;
+  line-height: 1.78;
+  font-size: 1.2rem;
+}
+.portfolio button {
+  margin-top: 3rem;
+  border: .05rem solid #3498DB;
+  background-color: transparent;
+  color: #3498DB;
+  padding: .8rem 2.5rem .8rem 2.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+/* About */
+.about {
+  background-color: #fafafa;
+  padding-bottom: 1rem;
+}
+.about img {
+  height: 100%;
+  width: 100%;
+  max-width: 620px;
+  object-fit: cover;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.about h2 {
+  color: #7F8C8D;
+}
+.about p {
+  font-size: 1rem;
+}
+.one {
+  color: #3498DB;
+}
+.two {
+  color: #2ECC71;
+}
+.three {
+  color: #E74C3C;
+}
+.four {
+  color: #8C13FC;
+}
+/* Contact */
+.contact {
+  background-color: #333333;
+  min-height: 66px;
+  padding: 28px 0 70px 0;
+  color: #fff;
+}
+.contact h4 {
+  padding-left: 1rem;
+}
+
 `
 
 export default function HomePage() {
   return (
     <HomePageStyle>
-      <PortfolioNav />
+      {/* <!-- Nav --> */}
+      <nav id="nav">
+        <ul class="container">
+          <li><a href="#top" class="active">Home</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
       <div class="hero">
-        <div class="hero-content">
-          <h1>Senior Product Developer and Designer</h1>
-          <p><FontAwesomeIcon icon={fasMapMarkerAlt} />Medellin, Colombia/United States</p>
-          {/* <a class="button" href="#">Contact Me Here</a> */}
+        <div class="content">
+          <h1>I build beautiful, scalable products that <span>make people's lives better.</span></h1>
+          <p>Currently building Welcome.org, and advising <a target="blank" href="https://www.gofetch.it/">GoFetchIt</a>.</p>
+          <p>Previously bootstrapped <a target="blank" href="https://followupedge.com">FollowupEdge</a> to 50k MRR and an acquisition.</p>
         </div>
       </div>
-      <div class="container">
-          <main class="services">
-            <h2>My Services</h2>
-            <div class="services-container">
-                <div class="service">
-                  <h3>Product Design</h3>
-                  <div class="icons">
-                      {/* <i class="far fa-pencil-ruler"></i> */}
-                      <FontAwesomeIcon icon={farPencilRuler} />
-                  </div>
-                  <p>
-                    I design in Sketch, translate those designs into workable prototypes, create design libraries for production ready code in Storybook, and create NPM/Yarn addable components with bit.dev.
-                  </p>
-                </div>
-                <div class="service"> 
-                  <h3>App Development</h3>
-                  <div class="icons">
-                      {/* <i class="far fa-coffee-togo"></i> */}
-                      <FontAwesomeIcon icon={farCoffeeTogo} />
-                  </div>
-                  <p>
-                    What I design, I can code - I focus on Progressive Web Apps. I'm strongest developing in Javascript. My favorite stack is NextJS, React, Node, Apollo Client, Prisma, GraphQL - hosted on Now.dev or Heroku.
-                  </p>
-                </div>
-                <div class="service">
-                  <h3>Product Management</h3>
-                  <div class="icons">
-                      {/* <i class="far fa-frosty-head"></i> */}
-                      <FontAwesomeIcon icon={farFrostyHead} />
-                  </div>
-                  <p>
-                    I can design, code, and talk to people (yay!) so I'm ideal as a force multiplier, leading teams to build great products and scalable businesses.
-                  </p>
-                </div>
-            </div>
-          </main>
-          <section 
-            class="contact"
-            id="contact"
-          >
-           {/* Form here */}
-           <ContactForm />
-          </section>
+      <div class="portfolio" id="work">
+        <div class="content">
+          <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1576119764/Raices/Scottie%27s%20Photos/fue.png" alt=""/>
+          <div class="spacer"></div>
+          <div class="categories">
+            <span>UI/UX Design /</span>
+            <span>Product /</span>
+            <span>Code</span>
+          </div>
+          <h2>FollowupEdge</h2>
+          <h4>The ugliest first baby that ever lived.</h4>
+          <button>Begin the story (coming soon)</button>
         </div>
+      </div>
+      <div class="about" id="about">
+        <div class="content">
+            <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1576106982/Raices/Scottie%27s%20Photos/photoScottie.jpg" alt=""/>
+            <h2>Hi! I'm Scottie Schneider - a <span class="one">technical product manager</span>, <span class="two">designer</span>, <span class="three">developer</span>, and <span class="four">mover</span>.</h2>
+            <p>I'm a medically retired Army Officer and West Point Graduate. I wasn't the smartest tool in the shed so I graduated with a 2.7 GPA like a boss.</p>
+            <p>After freezing off a toe and a half in Alaska, I learned how to dance salsa and discovered a lifelong passion for human movement.</p>
+            <p>In search of happiness and my life's purpose I took a one way flight to Medellin, Colombia. There I fell in love with a fiery Paisa, Cristina who is now my wife. We have two very spoiled Yorkies.</p>
+            <p>I'm either coding, designing, or at the gym exploring my body's potential for movement with Cristina.</p>
+            <h3>Interviews and Articles</h3>
+            <ul>
+              <li><a target="blank" href="http://sabmgroup.libsyn.com/39-creating-an-automated-lead-generation-system-for-your-business-with-scottie-schneider-usma-09">Service Academy Podcast</a></li>
+              <li><a target="blank" href="https://www.indiehackers.com/interview/how-we-quit-our-jobs-to-bootstrap-and-grow-our-own-business-16bdf1de2b">Indiehackers Interview - building FollowupEdge</a></li>
+            </ul>
+        </div>
+      </div>
+      <div class="contact" id="contact">
+        <h4>Let's work together! -- hello@scottieschneider.com</h4>
+      </div>
     </HomePageStyle>
   );
 }

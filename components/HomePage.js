@@ -1,14 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PortfolioNav from './PortfolioNav';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt as fasMapMarkerAlt } from '@fortawesome/pro-solid-svg-icons'
-import { faPencilRuler as farPencilRuler } from '@fortawesome/pro-regular-svg-icons';
-import { faCoffeeTogo as farCoffeeTogo } from '@fortawesome/pro-regular-svg-icons';
-import { faFrostyHead as farFrostyHead } from '@fortawesome/pro-regular-svg-icons';
-
-import ContactForm from './ContactForm';
 
 const HomePageStyle = styled.div`
   * {

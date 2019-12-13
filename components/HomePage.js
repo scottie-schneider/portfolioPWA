@@ -237,7 +237,7 @@ export default function HomePage() {
           <h2>FollowupEdge</h2>
           <h4>From my basement to 50k MRR</h4>
           <button>
-            <a href="https://followupedge.com" target="_blank">
+            <a href="https://www.indiehackers.com/interview/how-we-quit-our-jobs-to-bootstrap-and-grow-our-own-business-16bdf1de2b" target="_blank">
               Check it out
             </a>
           </button>

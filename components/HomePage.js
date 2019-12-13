@@ -64,17 +64,17 @@ nav ul a.active {
     top: 0;
   }
   .hero {
-    margin-top: 66px;
+    padding-top: 3rem;
   }
 }
 /* Hero section, with image and introduction */
 .hero {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: #fafafa;
-  height: 500px;
+  height: 100vh;
   color: #7F8C8D;
-  padding-top: 5rem;
 }
 .content h1 {
   font-size: 2.7rem;
@@ -89,10 +89,14 @@ nav ul a.active {
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   width: 90%;
   margin: 0 auto;
+}
+.content ul {
+  margin: 0 auto;
+  padding-left: 0;
 }
 .hero .content a {
   color: #000;
@@ -118,6 +122,12 @@ nav ul a.active {
   height: 400px;
   object-fit: contain;
 }
+button {
+  cursor: pointer;
+}
+button a {
+  color: #3498DB;
+}
 /* Category Sections */
 .categories {
   margin-top: 1rem;
@@ -139,6 +149,7 @@ nav ul a.active {
 }
 .portfolio button {
   margin-top: 3rem;
+  margin-bottom: 2rem;
   border: .05rem solid #3498DB;
   background-color: transparent;
   color: #3498DB;
@@ -186,6 +197,10 @@ nav ul a.active {
 }
 .contact h4 {
   padding-left: 1rem;
+  cursor: pointer;
+}
+.contact h4 a {
+  color: #fff;
 }
 
 `
@@ -214,13 +229,36 @@ export default function HomePage() {
           <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1576119764/Raices/Scottie%27s%20Photos/fue.png" alt=""/>
           <div class="spacer"></div>
           <div class="categories">
-            <span>UI/UX Design /</span>
-            <span>Product /</span>
-            <span>Code</span>
+            <span>SQL /</span>
+            <span>Node /</span>
+            <span>Javascript /</span>
+            <span>Bubble</span>
           </div>
           <h2>FollowupEdge</h2>
-          <h4>The ugliest first baby that ever lived.</h4>
-          <button>Begin the story (coming soon)</button>
+          <h4>From my basement to 50k MRR</h4>
+          <button>
+            <a href="https://followupedge.com" target="_blank">
+              Check it out
+            </a>
+          </button>
+        </div>
+      </div>
+      <div class="portfolio" id="work">
+        <div class="content">
+          <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1576269770/Raices/Scottie%27s%20Photos/raices.png" alt=""/>
+          <div class="spacer"></div>
+          <div class="categories">
+            <span>React /</span>
+            <span>GraphQL /</span>
+            <span>NextJS /</span>            
+          </div>
+          <h2>Raíces</h2>
+          <h4>WIP - An AirBnB clone</h4>
+          <button>
+            <a href="https://raices.scottieschneider.com" target="_blank">
+              Check it out
+            </a>
+          </button>
         </div>
       </div>
       <div class="about" id="about">
@@ -229,7 +267,7 @@ export default function HomePage() {
             <h2>Hi! I'm Scottie Schneider - a <span class="one">technical product manager</span>, <span class="two">designer</span>, <span class="three">developer</span>, and <span class="four">mover</span>.</h2>
             <p>I'm a medically retired Army Officer and West Point Graduate. I wasn't the smartest tool in the shed so I graduated with a 2.7 GPA like a boss.</p>
             <p>After freezing off a toe and a half in Alaska, I learned how to dance salsa and discovered a lifelong passion for human movement.</p>
-            <p>In search of happiness and my life's purpose I took a one way flight to Medellin, Colombia. There I fell in love with a fiery Paisa, Cristina who is now my wife. We have two very spoiled Yorkies.</p>
+            <p>In search of happiness and my life's purpose I took a one way flight to Medellin, Colombia. There I fell in love with a fiery Paisa, Cristina - now my wife. We have two very spoiled Yorkies.</p>
             <p>I'm either coding, designing, or at the gym exploring my body's potential for movement with Cristina.</p>
             <h3>Interviews and Articles</h3>
             <ul>
@@ -239,7 +277,7 @@ export default function HomePage() {
         </div>
       </div>
       <div class="contact" id="contact">
-        <h4>Let's work together! -- hello@scottieschneider.com</h4>
+        <h4>Let's work together! -- <a href="mailto:hello@scottieschneider.com">hello@scottieschneider.com</a></h4>
       </div>
     </HomePageStyle>
   );

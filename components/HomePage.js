@@ -116,7 +116,7 @@ nav ul a.active {
 button {
   cursor: pointer;
 }
-button a {
+a button {
   color: #3498DB;
 }
 /* Category Sections */
@@ -227,11 +227,9 @@ export default function HomePage() {
           </div>
           <h2>FollowupEdge</h2>
           <h4>From my basement to 50k MRR</h4>
-          <button>
             <a href="https://www.indiehackers.com/interview/how-we-quit-our-jobs-to-bootstrap-and-grow-our-own-business-16bdf1de2b" target="_blank">
-              Check it out
+              <button>Check it out</button>
             </a>
-          </button>
         </div>
       </div>
       <div class="portfolio" id="work">
@@ -245,11 +243,9 @@ export default function HomePage() {
           </div>
           <h2>Raíces</h2>
           <h4>WIP - An AirBnB clone</h4>
-          <button>
-            <a href="https://raices.scottieschneider.com" target="_blank">
-              Check it out
-            </a>
-          </button>
+          <a href="https://raices.scottieschneider.com" target="_blank">
+            <button>Check it out</button>
+          </a>
         </div>
       </div>
       <div class="about" id="about">

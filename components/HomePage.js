@@ -280,6 +280,9 @@ export default function HomePage() {
           </div>
           <h2>Puerta</h2>
           <h4>Uber for real estate. I led a team of 6 other developers (and one scrappy UX/UI designer) for 30 hours to produce Puerta.</h4>
+          <a href="https://github.com/PuertaApp/puertaApp" target="_blank">
+            <button className="code">See the code</button>
+          </a>
         </div>
       </div>
       <div class="portfolio" id="">

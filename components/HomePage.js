@@ -11,6 +11,7 @@ const HomePageStyle = styled.div`
     width: 50%;
     height: 100%;
 }
+
 body {
   width: 100vw;
   margin: 0;
@@ -154,10 +155,24 @@ a button {
   text-transform: uppercase;
   font-size: 1.2rem;  
 }
-.portfolio button.code {
+.portfolio a {
+  border: 1px solid red;
+  margin: 3rem auto 2rem auto;
+  border: .05rem solid #3498DB;
+  background-color: transparent;
+  color: #3498DB;
+  padding: .8rem 2.5rem .8rem 2.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;  
+  max-width: 300px;
+}
+.portfolio a.code {
   border: none;
   margin-top: 1rem;
-  color: #7F8C8D;;
+  color: #7F8C8D;
+  :hover {
+    text-decoration: underline;
+  }
 }
 /* About */
 .about {
@@ -241,8 +256,8 @@ export default function HomePage() {
           </div>
           <h2>FollowupEdge</h2>
           <h4>From my basement to 50k MRR</h4>
-            <a href="https://www.indiehackers.com/interview/how-we-quit-our-jobs-to-bootstrap-and-grow-our-own-business-16bdf1de2b" target="_blank">
-              <button>Check it out</button>
+            <a href="https://www.indiehackers.com/interview/how-we-quit-our-jobs-to-bootstrap-and-grow-our-own-business-16bdf1de2b" target="_blank"> 
+              Read the story            
             </a>
         </div>
       </div>
@@ -258,11 +273,11 @@ export default function HomePage() {
           </div>
           <h2>DevConnect</h2>
           <h4>A social network for devs and designers.</h4>
-            <a href="https://social-media-app-nextjs.herokuapp.com/" target="_blank">
-              <button>Check it out</button>
+            <a href="https://social-media-app-nextjs.herokuapp.com/" target="_blank"> 
+              Check it out             
             </a>
-            <a href="https://github.com/scottie-schneider/social_media_app" target="_blank">
-              <button className="code">See the code</button>
+            <a className="code" href="https://github.com/scottie-schneider/social_media_app" target="_blank">
+              See the code
             </a>
         </div>
       </div>
@@ -280,9 +295,9 @@ export default function HomePage() {
           </div>
           <h2>Puerta</h2>
           <h4>Uber for real estate. I led a team of 6 other developers (and one scrappy UX/UI designer) for 30 hours to produce Puerta.</h4>
-          <a href="https://github.com/PuertaApp/puertaApp" target="_blank">
-            <button className="code">See the code</button>
-          </a>
+          <a className="code" href="https://github.com/PuertaApp/puertaApp" target="_blank">
+              See the code
+            </a>
         </div>
       </div>
       <div class="portfolio" id="">
@@ -296,9 +311,12 @@ export default function HomePage() {
           </div>
           <h2>Raíces</h2>
           <h4>WIP - An AirBnB clone</h4>
-          <a href="https://raices.scottieschneider.com" target="_blank">
-            <button>Check it out</button>
-          </a>
+          <a href="https://raices.scottieschneider.com" target="_blank"> 
+              Check it out             
+            </a>
+            <a className="code" href="https://github.com/scottie-schneider/raices" target="_blank">
+              See the code
+            </a>
         </div>
       </div>
       <div class="about" id="about">

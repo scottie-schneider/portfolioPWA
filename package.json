@@ -57,5 +57,6 @@
   },
   "devDependencies": {
     "@fortawesome/fontawesome-pro": "^5.11.2"
-  }
+  },
+  "engines": { "node": "12.x" }
 }

@@ -232,6 +232,26 @@ export default function HomePage() {
             </a>
         </div>
       </div>
+      <div class="portfolio" id="">
+        <div class="content">
+          <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1578362822/Raices/Portfolio%20Site%20%28ScottieSchneider.com%29/Social_App.png" alt=""/>
+          <div class="spacer"></div>
+          <div class="categories">
+            <span>React & NextJS /</span>
+            <span>Node & Express /</span>
+            <span>MongoDB /</span>
+            <span>Material Design</span>
+          </div>
+          <h2>DevConnect</h2>
+          <h4>A social network for devs and designers.</h4>
+            <a href="https://social-media-app-nextjs.herokuapp.com/" target="_blank">
+              <button>Check it out</button>
+            </a>
+            <a href="https://social-media-app-nextjs.herokuapp.com/" target="_blank">
+              <button>See the code</button>
+            </a>
+        </div>
+      </div>
       <div class="portfolio" id="work">
         <div class="content">
           <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1578362822/Raices/Portfolio%20Site%20%28ScottieSchneider.com%29/Social_App.png" alt=""/>
@@ -249,7 +269,7 @@ export default function HomePage() {
             </a>
         </div>
       </div>
-      <div class="portfolio" id="work">
+      <div class="portfolio" id="">
         <div class="content">
           <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1576269770/Raices/Scottie%27s%20Photos/raices.png" alt=""/>
           <div class="spacer"></div>

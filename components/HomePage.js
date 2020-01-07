@@ -5,6 +5,12 @@ const HomePageStyle = styled.div`
   * {
   font-family: 'Fira Sans', sans-serif;
 }
+.intrinsic-container iframe {
+    min-height: 300px;
+    min-width: 50vh;
+    width: 50%;
+    height: 100%;
+}
 body {
   width: 100vw;
   margin: 0;
@@ -146,7 +152,12 @@ a button {
   color: #3498DB;
   padding: .8rem 2.5rem .8rem 2.5rem;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.2rem;  
+}
+.portfolio button.code {
+  border: none;
+  margin-top: 1rem;
+  color: #7F8C8D;;
 }
 /* About */
 .about {
@@ -159,6 +170,9 @@ a button {
   max-width: 620px;
   object-fit: cover;
   padding: 1rem;
+  margin: 0 auto;
+}
+iframe {
   margin: 0 auto;
 }
 .about h2 {
@@ -247,26 +261,25 @@ export default function HomePage() {
             <a href="https://social-media-app-nextjs.herokuapp.com/" target="_blank">
               <button>Check it out</button>
             </a>
-            <a href="https://social-media-app-nextjs.herokuapp.com/" target="_blank">
-              <button>See the code</button>
+            <a href="https://github.com/scottie-schneider/social_media_app" target="_blank">
+              <button className="code">See the code</button>
             </a>
         </div>
       </div>
       <div class="portfolio" id="work">
         <div class="content">
-          <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1578362822/Raices/Portfolio%20Site%20%28ScottieSchneider.com%29/Social_App.png" alt=""/>
+        <div class="intrinsic-container intrinsic-container-16x9">
+            <iframe src="https://www.youtube.com/embed/teNHAeTtots" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>        
           <div class="spacer"></div>
           <div class="categories">
             <span>React & NextJS /</span>
             <span>Node & Express /</span>
             <span>MongoDB /</span>
-            <span>Material Design</span>
+            <span>Progressive Web App</span>
           </div>
-          <h2>DevConnect</h2>
-          <h4>A social network for devs and designers.</h4>
-            <a href="https://social-media-app-nextjs.herokuapp.com/" target="_blank">
-              <button>Check it out</button>
-            </a>
+          <h2>Puerta</h2>
+          <h4>Uber for real estate. I led a team of 6 other developers (and one scrappy UX/UI designer) for 30 hours to produce Puerta.</h4>
         </div>
       </div>
       <div class="portfolio" id="">

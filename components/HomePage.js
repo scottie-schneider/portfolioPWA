@@ -246,6 +246,25 @@ export default function HomePage() {
       </div>
       <div class="portfolio" id="work">
         <div class="content">
+          <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1579294340/Raices/Portfolio%20Site%20%28ScottieSchneider.com%29/Ecomm_App.png" alt=""/>
+          <div class="spacer"></div>
+          <div class="categories">
+            <span>React & Redux /</span>
+            <span>Firebase & Firestore /</span>
+            <span>Create React App /</span>
+          </div>
+          <h2>DevConnect</h2>
+          <h4>An ecomm app with Redux and Firestore.</h4>
+            <a href="https://portfolio-ecomm-app.herokuapp.com/" target="_blank"> 
+              Check it out             
+            </a>
+            <a className="code" href="https://github.com/scottie-schneider/portfolioEcomApp" target="_blank">
+              See the code
+            </a>
+        </div>
+      </div>
+      <div class="portfolio" id="">
+        <div class="content">
           <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1576119764/Raices/Scottie%27s%20Photos/fue.png" alt=""/>
           <div class="spacer"></div>
           <div class="categories">

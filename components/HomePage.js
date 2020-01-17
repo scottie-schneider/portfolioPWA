@@ -251,9 +251,9 @@ export default function HomePage() {
           <div class="categories">
             <span>React & Redux /</span>
             <span>Firebase & Firestore /</span>
-            <span>Create React App /</span>
+            <span>Create React App</span>
           </div>
-          <h2>DevConnect</h2>
+          <h2>Buy hats and stuff</h2>
           <h4>An ecomm app with Redux and Firestore.</h4>
             <a href="https://portfolio-ecomm-app.herokuapp.com/" target="_blank"> 
               Check it out             

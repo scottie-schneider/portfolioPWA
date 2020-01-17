@@ -282,7 +282,7 @@ export default function HomePage() {
       </div>
       <div class="portfolio" id="">
         <div class="content">
-          <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1578362822/Raices/Portfolio%20Site%20%28ScottieSchneider.com%29/Social_App.png" alt=""/>
+          <img src="https://res.cloudinary.com/dvqw5uhrr/image/upload/v1579294828/Raices/Portfolio%20Site%20%28ScottieSchneider.com%29/Social_App.png" alt=""/>
           <div class="spacer"></div>
           <div class="categories">
             <span>React & NextJS /</span>

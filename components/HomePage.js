@@ -311,12 +311,11 @@ export default function HomePage() {
           </p>
           <p>
             In search of happiness and my life's purpose I took a one way flight
-            to Medellin, Colombia. There I fell in love with a fiery Paisa,
-            Cristina - now my wife. We have two very spoiled Yorkies.
+            to Medellin, Colombia.
           </p>
           <p>
-            I'm either coding, designing, or at the gym exploring my body's
-            potential for movement with Cristina.
+            I'm either coding, designing, reading, or at the gym exploring my
+            body's potential for movement and flexibility.
           </p>
           <h3>Interviews and Articles</h3>
           <ul>
